@@ -7,6 +7,7 @@ h2 /* Selektor h2 */ { /* Deklarácia */
     color: violet;
     text-transform: uppercase;
 }
+
 .perex {
     font-style: italic;
 }
@@ -19,4 +20,58 @@ strong {
     color: burlywood;
     text-decoration: wavy line-through;
     text-transform: uppercase;
+}
+
+.end {
+    text-align: end;
+}
+
+#wspacing20 {
+    word-spacing: 20px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.center {
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+}
+
+.font1 {
+    font-weight: lighter;
+    font-style: inherit;
+    font-size: x-large;
+    line-height: 25cap;  
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.font2 {
+    font-weight: bolder;
+    font-style: oblique;
+    font-size: medium;
+    line-height: 35%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#wspacing50 {
+    word-spacing: 50px;
+}
+
+.left {
+    text-align: left;
+}
+
+#lspacing10 {
+    letter-spacing: 10px;
+}
+
+.font4 {
+    font-weight: 700;
+    font-style: inherit;
+    font-size: xx-small;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 20%;
 }
