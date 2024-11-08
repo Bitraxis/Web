@@ -13,4 +13,6 @@ strong {
 
 #cpvvapdzui {
     color: burlywood;
+    text-decoration: wavy line-through;
+    text-transform: uppercase;
 }
