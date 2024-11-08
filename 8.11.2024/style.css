@@ -1,14 +1,18 @@
 h2 /* Selektor h2 */ { /* Deklarácia */
-    color: crimson;
+    color: yellowgreen;
     font-size: 28px;
 }
 
+.jasny {
+    color: violet;
+    text-transform: uppercase;
+}
 .perex {
     font-style: italic;
 }
 
 strong {
-    color: darkolivegreen;
+    color: violet;
 }
 
 #cpvvapdzui {
