@@ -3,6 +3,14 @@ h2 /* Selektor h2 */ { /* Deklarácia */
     font-size: 28px;
 }
 
-.yellow {
-    color: yellowgreen;
+.perex {
+    font-style: italic;
+}
+
+strong {
+    color: darkolivegreen;
+}
+
+#cpvvapdzui {
+    color: burlywood;
 }
