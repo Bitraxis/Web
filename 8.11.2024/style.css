@@ -1,0 +1,8 @@
+h2 /* Selektor h2 */ { /* Deklarácia */
+    color: crimson;
+    font-size: 28px;
+}
+
+.yellow {
+    color: yellowgreen;
+}
