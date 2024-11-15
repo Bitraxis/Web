@@ -2,4 +2,17 @@
 
 .hlavny {
     font-family: "Merriweather", "Times New Roman", serif;
+    border-top: 4px dodgerblue dotted;
+    border-right: 6px skyblue dashed;
+    border-left: 8px slateblue double;
+    border-bottom: 10px blueviolet solid;
+    background-color: bisque;
+    padding: 15px 5px 3px 8px;
+    margin: 20px 9px 4px 13px;
+}
+
+body {
+    width: 800px;
+    border: 1cap skyblue solid;
+    margin: 0px auto;
 }
