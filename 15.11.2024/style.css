@@ -15,4 +15,16 @@ body {
     width: 800px;
     border: 1cap skyblue solid;
     margin: 0px auto;
+    color: darkcyan;
+}
+
+aside {
+    display: flex;
+    margin: 2cap;
+    padding: 2cap;
+    color: blueviolet;
+}
+
+li {
+    display: inline;
 }
