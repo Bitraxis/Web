@@ -92,3 +92,7 @@ h1::before {
         visibility: hidden;
     }
 }
+
+.cta-button:disabled {
+    background-color: lightgray;
+}
