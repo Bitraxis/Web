@@ -23,7 +23,7 @@ nav ul {
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
+    padding: 0 15px;
 }
 
 nav ul li a {
@@ -95,4 +95,12 @@ h1::before {
 
 .cta-button:disabled {
     background-color: lightgray;
+}
+
+li {
+    border-right: black solid;
+}
+
+li:last-child {
+    border: none;
 }
