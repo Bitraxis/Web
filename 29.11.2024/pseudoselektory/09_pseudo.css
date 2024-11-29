@@ -61,3 +61,34 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* extra kod*/
+
+li:hover {
+    background-color: #D90368;
+    text-decoration: underline ;
+}
+
+h1::before {
+    content: "💻";
+}
+
+.cta-button:hover {
+    background-color: #FFC300;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.description::first-letter {
+    font-size: 2rem;
+}
+
+::selection {
+    background-color: #FFD700;
+    color: #2E294E;
+}
+
+@media screen and (max-width: 600px) {
+    li:last-child {
+        visibility: hidden;
+    }
+}
