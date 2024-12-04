@@ -1,10 +1,32 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+body {
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    background-color: hsl(30, 54%, 90%);
+}
+
+main {
+    background-color: white;
+    padding: 5px 5px 5px 5px;
+    border: 10px solid white;
+    border-radius: 15px;
+}
 
 .preparation {
     background-color: hsl(330, 100%, 98%);
+    border: 15px solid hsl(330, 100%, 98%);
+    border-radius: 20px;
 }
 
 .preparation-title {
     color: hsl(332, 51%, 32%);
+}
+
+.preparation ul li {
+    padding: 0 0 0 0;
+    padding-left: 15px;
+}
+
+.preparation ul li strong {
+    color: hsl(30, 18%, 87%);
 }
