@@ -17,8 +17,7 @@ h1,h2 {
 }
 
 h2 {
-    color: hsl(14, 45%, 36%)
-    ;
+    color: hsl(14, 45%, 36%);
 }
 
 .container {
@@ -29,14 +28,20 @@ h2 {
     border-radius: 15px;
 }
 
-img {
-    width: 100%;
+.preparation {
+    background-color: hsl(330, 100%, 98%);
+    line-height: 1.75em;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 375px) {
-    .container {
-        margin: 0 auto;
-        width: 375px;
-    }
+.preparation > h3 {
+    color: hsl(332, 51%, 32%)
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
 }
