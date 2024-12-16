@@ -1,15 +1,12 @@
 html, body {
     height: 100%;
 }
-body {
-    color: #fff; 
-    font: 20px "Courier Bold", Georgia, serif; font-weight: bold;
-    background: #f7f6d3;
-    padding: 1em;
-}
 
-body, a {
-    color: #fff;
+body {
+    font: 20px "Courier Bold", Georgia, serif;
+    font-weight: bold;
+    color: #000;
+    margin: auto;
 }
 
 ul {
@@ -17,31 +14,40 @@ ul {
     padding-left: 0;
 }
 
-header, nav, article, aside, footer {
-    padding: 1.2em; 
-    background: #3b9ae1;
-    border-radius: .5em;
+header, main, aside, footer {
+    text-align: center;
+    padding: 1.5em;
+    color: #fff;
+}
+
+header {
+    background: #fdb462;
     margin: 5px;
 }
 
-header  { 
-    background: #e1803b;
+main {
+    background: #1266d8;
+    margin: 5px;
+    order: 2;
 }
-nav     { 
-    background: #45d03e; 
-    order: 1;
-    flex-basis: 15%;
-} 
-article { 
-    background: #1230d7; 
-}
-aside   { 
-    background: #181a30; 
+
+aside {
+    background: #6e6e6e;
+    margin: 5px;
     order: 3;
-    flex-basis: 15%;
+    flex: 0 0 10%;
 }
-footer  { 
-    background:#ed34c2;
+
+footer {
+    background: #a7488e;
+    margin: 5px;
+}
+
+nav {
+    background: #14a02e;
+    margin: 5px;
+    order: 1;
+    flex: 0 0 10%;
 }
 
 .wrapper {
@@ -49,15 +55,63 @@ footer  {
     flex-direction: row;
 }
 
-main {
-    order: 2;
-}
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
     .wrapper {
         flex-direction: column;
     }
     nav {
         display: none;
+        order: 1;
+    }
+    main {
+        order: 2;
+    }
+    aside {
+        order: 3;
     }
 }
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        flex: 0 0 50%;
+        flex-direction: row;
+        order: 1;
+    }
+
+    aside {
+        flex: 0 0 50%;
+        order: 2;
+        flex-direction: row;
+    }
+
+    main {
+        flex: 0 0 100%;
+        order: 3;
+    }
+
+    footer {
+        flex: 0 0 100%;
+        order: 4;
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0.5em 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
