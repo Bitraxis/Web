@@ -28,20 +28,40 @@ aside{
     .wrapper {
         display: flex;
         flex-wrap: wrap;
+        gap: 2%;
     }
     nav {
         order: 1;
-        width: 50%;
+        flex: 1 1 49%;
     }    
     aside {
         order: 2;
-        width: 50%;
+        flex: 1 1 49%;
     }
     main {
+        flex: 1 1 100%;
+        margin-top: 2%;
         order: 3;
     }
 }
 
 @media screen and (min-width: 1025px) {
-    
+    .container {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+    .wrapper {
+        display: flex;
+        gap: 1.5%;
+    }
+    nav {
+        order: 1;
+
+    }
+    main {
+        order: 2;
+    }
+    aside {
+        order: 3;
+    }
 }
