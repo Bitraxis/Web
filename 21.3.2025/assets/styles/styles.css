@@ -7,7 +7,28 @@
     --green-teal: hsl(166, 100%, 37%);
     --cobalt-blue: hsl(234, 85%, 45%);
 
-    /* Gradient */
+    /* Gradient Colors*/
     --light-slate-blue /*background*/: hsl(252, 100%, 67%);
-
+    --light-royal-blue /*background*/: hsl(241, 81%, 54%);
+    --violet-blue /*circle*/: hsla(256, 72%, 46%, 1);
+    --persian-blue /*circle*/: hsla(241, 72%, 46%, 0);
+    /* Gradient */
+    --gradient-background: linear-gradient(90deg, var(--light-slate-blue), var(--light-royal-blue));
+    --gradient-circle: linear-gradient(90deg, var(--violet-blue), var(--persian-blue));
 };
+
+.sumar__section--cervena {
+    background-color: var(--light-red);
+}
+
+.sumar__section--zlta {
+    background-color: var(--orangey-yellow);
+}
+
+.sumar__section--zelena {
+    background-color: var(--green-teal);
+}
+
+.sumar_section--modra {
+    background-color: var(--cobalt-blue);
+}
