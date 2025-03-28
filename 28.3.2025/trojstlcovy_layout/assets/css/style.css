@@ -23,10 +23,10 @@
     /* Device Specific */
     @media screen and (max-width: 719px) {
         grid-template-columns: 1;
-        grid-template-rows: 3;
+        grid-template-rows: 4;
     };
     @media screen and (min-width: 720px) {
-        grid-template-columns: 3;
+        grid-template-columns: 4;
         grid-template-rows: 1;   
     };
 }
@@ -34,20 +34,23 @@
 
 /* Sedany */
 .sedany {
-    height: auto;
     background-color: var(--bright-orange);
     color: var(--transparent-white);
     padding: 15px 15px 15px 15px;
-    border-radius: 12px 12px 0px 0px;
+    
     /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-top: 50px;
         margin-left: 25px;
         margin-right: 25px;
         margin-bottom: 0;
+        grid-column: 1;
+        grid-row: 1 / 2;
+        border-radius: 12px 12px 0px 0px;
     };
     @media screen and (min-width: 720px) {
-
+        grid-column: 1 / 2;
+        grid-row: 1;
     };
 }
 
@@ -65,18 +68,22 @@
     font-family: "Lexend Deca", sans-serif;
     background-color: var(--very-light-gray);
     color: var(--bright-orange);
-    border-radius: 12px;
+    margin-top: 10px;
+    margin-right: 50%;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
     border: none;
+    padding: 15px 15px 15px 15px;
 }
 
-.sedany__h2,.sedany__p {
+.sedany__h2,.sedany__p,.sedany__img {
     padding: 15px 15px 15px 15px;
 }
 
 /* SUV */
 .suv {
     padding: 15px 15px 15px 15px;
-    height: auto;
     background-color: var(--dark-cyan);
     color: var(--transparent-white);
     /* Device Specific */
@@ -84,10 +91,13 @@
         margin-left: 25px;
         margin-right: 25px;
         margin-bottom: 0;
-        margin-top: 0;    
+        margin-top: 0;
+        grid-column: 1;
+        grid-row: 2 / 3;    
     };
     @media screen and (min-width: 720px) {
-        
+        grid-column: 2 / 3;
+        grid-row: 1;
     };
 }
 
@@ -105,19 +115,23 @@
     font-family: "Lexend Deca", sans-serif;
     background-color: var(--very-light-gray);
     color: var(--dark-cyan);
-    border-radius: 12px;
+    border-radius: 20px;
     border: none;
+    padding: 15px 15px 15px 15px;
+    margin-top: 10px;
+    margin-right: 50%;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
-.suv__h2,.suv__p {
+.suv__h2,.suv__p,.suv__img {
     padding: 15px 15px 15px 15px;
 }
 
 /* Luxusne */
 .luxusne {
     padding: 15px 15px 15px 15px;
-    border-radius: 0px 0px 12px 12px;
-    height: auto;
+    
     background-color: var(--very-dark-cyan);
     color: var(--transparent-white);
     /* Device Specific */
@@ -126,9 +140,13 @@
         margin-right: 25px;
         margin-bottom: 50px;
         margin-top: 0;
+        grid-column: 1;
+        grid-row: 3 / 4;
+        border-radius: 0px 0px 12px 12px;
     };
     @media screen and (min-width: 720px) {
-        
+        grid-row: 3 / 4;
+        grid-column: 1;
     };
 }
 
@@ -146,10 +164,15 @@
     font-family: "Lexend Deca", sans-serif;
     background-color: var(--very-light-gray);
     color: var(--very-dark-cyan);
-    border-radius: 12px;
+    border-radius: 20px;
     border: none;
+    padding: 15px 15px 15px 15px;
+    margin-top: 10px;
+    margin-right: 50%;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
-.luxusne__h2,.luxusne__p {
+.luxusne__h2,.luxusne__p,.luxusne__img {
     padding: 15px 15px 15px 15px;
 }
