@@ -17,8 +17,11 @@
     margin: 0 0 0 0;
 }
 
+/* Sedany */
 .sedany {
     background-color: var(--bright-orange);
+
+    /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-top: 50px;
         margin-left: 25px;
@@ -30,8 +33,11 @@
     };
 }
 
+/* SUV */
 .suv {
     background-color: var(--dark-cyan);
+
+    /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-left: 25px;
         margin-right: 25px;
@@ -43,8 +49,11 @@
     };
 }
 
+/* Luxusne */
 .luxusne {
     background-color: var(--very-dark-cyan);
+
+    /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-left: 25px;
         margin-right: 25px;
