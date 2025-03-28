@@ -14,16 +14,44 @@
 
 * {
     font-size: 15px;
+    margin: 0 0 0 0;
 }
 
 .sedany {
-    color: var(--bright-orange);
+    background-color: var(--bright-orange);
+    @media screen and (max-width: 719px) {
+        margin-top: 50px;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 0;
+    };
+    @media screen and (min-width: 720px) {
+
+    };
 }
 
 .suv {
-    color: var(--dark-cyan);
+    background-color: var(--dark-cyan);
+    @media screen and (max-width: 719px) {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 0;
+        margin-top: 0;    
+    };
+    @media screen and (min-width: 720px) {
+        
+    };
 }
 
 .luxusne {
-    color: var(--very-dark-cyan);
+    background-color: var(--very-dark-cyan);
+    @media screen and (max-width: 719px) {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 50px;
+        margin-top: 0;
+    };
+    @media screen and (min-width: 720px) {
+        
+    };
 }
