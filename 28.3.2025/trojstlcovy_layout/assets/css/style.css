@@ -15,9 +15,21 @@
 * {
     font-size: 15px;
     margin: 0 0 0 0;
-    height: 100%;
+    display: grid;
 }
 
+.container {
+    display: grid;
+    /* Device Specific */
+    @media screen and (max-width: 719px) {
+        grid-template-columns: 1;
+        grid-template-rows: 3;
+    };
+    @media screen and (min-width: 720px) {
+        grid-template-columns: 3;
+        grid-template-rows: 1;   
+    };
+}
 
 
 /* Sedany */
@@ -25,6 +37,8 @@
     height: auto;
     background-color: var(--bright-orange);
     color: var(--transparent-white);
+    padding: 15px 15px 15px 15px;
+    border-radius: 12px 12px 0px 0px;
     /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-top: 50px;
@@ -37,22 +51,31 @@
     };
 }
 
-.sedany__h3 {
+.sedany__h2 {
     font-family: "Big Shoulders", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 .sedany__p {
     font-family: "Lexend Deca", sans-serif;
 }
 
-sedany_button {
+.sedany__button {
     font-family: "Lexend Deca", sans-serif;
     background-color: var(--very-light-gray);
     color: var(--bright-orange);
+    border-radius: 12px;
+    border: none;
+}
+
+.sedany__h2,.sedany__p {
+    padding: 15px 15px 15px 15px;
 }
 
 /* SUV */
 .suv {
+    padding: 15px 15px 15px 15px;
     height: auto;
     background-color: var(--dark-cyan);
     color: var(--transparent-white);
@@ -68,16 +91,32 @@ sedany_button {
     };
 }
 
-.suv__h3 {
+.suv__h2 {
     font-family: "Big Shoulders", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 .suv__p {
     font-family: "Lexend Deca", sans-serif;
 }
 
+.suv__button {
+    font-family: "Lexend Deca", sans-serif;
+    background-color: var(--very-light-gray);
+    color: var(--dark-cyan);
+    border-radius: 12px;
+    border: none;
+}
+
+.suv__h2,.suv__p {
+    padding: 15px 15px 15px 15px;
+}
+
 /* Luxusne */
 .luxusne {
+    padding: 15px 15px 15px 15px;
+    border-radius: 0px 0px 12px 12px;
     height: auto;
     background-color: var(--very-dark-cyan);
     color: var(--transparent-white);
@@ -93,10 +132,24 @@ sedany_button {
     };
 }
 
-.luxusne__h3 {
+.luxusne__h2 {
     font-family: "Big Shoulders", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
 }
 
 .luxusne__p {
     font-family: "Lexend Deca", sans-serif;
+}
+
+.luxusne__button {
+    font-family: "Lexend Deca", sans-serif;
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-cyan);
+    border-radius: 12px;
+    border: none;
+}
+
+.luxusne__h2,.luxusne__p {
+    padding: 15px 15px 15px 15px;
 }
