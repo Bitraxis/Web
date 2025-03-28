@@ -15,12 +15,16 @@
 * {
     font-size: 15px;
     margin: 0 0 0 0;
+    height: 100%;
 }
+
+
 
 /* Sedany */
 .sedany {
+    height: auto;
     background-color: var(--bright-orange);
-
+    color: var(--transparent-white);
     /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-top: 50px;
@@ -33,10 +37,25 @@
     };
 }
 
+.sedany__h3 {
+    font-family: "Big Shoulders", sans-serif;
+}
+
+.sedany__p {
+    font-family: "Lexend Deca", sans-serif;
+}
+
+sedany_button {
+    font-family: "Lexend Deca", sans-serif;
+    background-color: var(--very-light-gray);
+    color: var(--bright-orange);
+}
+
 /* SUV */
 .suv {
+    height: auto;
     background-color: var(--dark-cyan);
-
+    color: var(--transparent-white);
     /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-left: 25px;
@@ -49,10 +68,19 @@
     };
 }
 
+.suv__h3 {
+    font-family: "Big Shoulders", sans-serif;
+}
+
+.suv__p {
+    font-family: "Lexend Deca", sans-serif;
+}
+
 /* Luxusne */
 .luxusne {
+    height: auto;
     background-color: var(--very-dark-cyan);
-
+    color: var(--transparent-white);
     /* Device Specific */
     @media screen and (max-width: 719px) {
         margin-left: 25px;
@@ -63,4 +91,12 @@
     @media screen and (min-width: 720px) {
         
     };
+}
+
+.luxusne__h3 {
+    font-family: "Big Shoulders", sans-serif;
+}
+
+.luxusne__p {
+    font-family: "Lexend Deca", sans-serif;
 }
