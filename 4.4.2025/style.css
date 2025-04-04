@@ -38,6 +38,7 @@ h4{
     nav{
         display: none;
     }
+    
     .wrapper {
     display: flex;
     flex-direction: column;
