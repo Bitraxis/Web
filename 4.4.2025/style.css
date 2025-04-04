@@ -1,0 +1,80 @@
+header{
+    background-color: #ffb663;
+}
+
+footer{
+    background-color: #995092;
+}
+
+nav{
+    background-color: #12a32d;
+}
+
+main{
+    background-color: #0f61cc;
+}
+
+aside{
+    background-color: #6c6c6c;
+}
+
+@media screen and (max-width: 768px) {  /* mobil*/
+    nav{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1020px)  /* tablet*/ {
+    .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2em;
+    }
+
+    nav{
+        order: 1;
+        flex: 1 1 calc(50% - 1.2em);
+
+    }
+
+    aside{
+        order: 2;
+        flex: 1 1 calc(50% - 10px);
+
+
+    }
+
+    main{
+        order: 3;
+    }
+}
+ /* 1   (flex-grow): Umožňuje elementu zväčšiť sa, ak je dostupný priestor.
+1 (flex-shrink): Element sa môže zmenšiť, ak nie je dostatok miesta. 
+(flex-basis): Zabezpečuje, že každý element bude zaberať polovicu šírky mínus medzery.
+*/
+
+
+@media screen and (min-width: 1025px) /* desktop*/ {
+    .container{
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .wrapper{
+        display: flex;
+        gap: 15px;
+    }
+
+    nav{
+        flex: 1;
+    }
+
+    aside{
+        flex: 1;
+    }
+
+    main{
+        flex: 4;
+    }
+
+}
