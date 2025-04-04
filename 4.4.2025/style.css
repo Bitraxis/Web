@@ -18,11 +18,22 @@ aside{
     background-color: #6c6c6c;
 }
 
+h4{
+    font-size: clamp(1.5rem, 3vw + 1.5rem + 1vh, 3rem);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 768px) {  /* mobil*/
     nav{
         display: none;
     }
 }
+
+
 
 @media screen and (min-width: 769px) and (max-width: 1020px)  /* tablet*/ {
     .wrapper{
