@@ -1,25 +1,31 @@
 header{
     background-color: #ffb663;
+    padding: clamp(1rem, 2vw, 3rem);
+    height: 100vh;
+}
+
+.header__p {
+    margin: clamp(1rem, 2vw, 3rem);
+    font-size: clamp(2.5vw, 4vw + 1vh, 6vh);
+    word-wrap: break-word;
+    text-align: justify;
 }
 
 footer{
     background-color: #995092;
+    height: 100vh;
+    padding: clamp(1rem, 2vw, 3rem);
 }
 
-nav{
-    background-color: #12a32d;
-}
-
-main{
-    background-color: #0f61cc;
-}
-
-aside{
-    background-color: #6c6c6c;
+.footer__p {
+    margin: clamp(1rem, 2vw, 3rem);
+    font-size: clamp(2.5vw, 4vw + 1vh, 6vh);
+    word-wrap: break-word;
+    text-align: justify;
 }
 
 h4{
-    font-size: clamp(1.5rem, 3vw + 1.5rem + 1vh, 3rem);
+    font-size: clamp(7.5vw ,10vw, 14vw);
 }
 
 .container {
@@ -27,9 +33,45 @@ h4{
     flex-direction: column;
 }
 
+
 @media screen and (max-width: 768px) {  /* mobil*/
     nav{
         display: none;
+    }
+    .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+    }
+
+    main{
+        background-color: #0f61cc;
+        height: 100vh;
+        padding: clamp(1rem, 2vw, 3rem);
+    }
+
+    .main {
+        height: 100vh;
+    }
+
+    .main__p {
+        margin: clamp(1rem, 2vw, 3rem);
+        font-size: clamp(2.5vw, 4vw + 1vh, 6vh);
+        word-wrap: break-word;
+        text-align: justify;
+    }
+
+    aside{
+        background-color: #6c6c6c;
+        height: 100vh;
+        padding: clamp(1rem, 2vw, 3rem);
+    }
+
+    .aside__p {
+        margin: clamp(1rem, 2vw, 3rem);
+        font-size: clamp(2.5vw, 4vw + 1vh, 6vh);
+        word-wrap: break-word;
+        text-align: justify;
     }
 }
 
