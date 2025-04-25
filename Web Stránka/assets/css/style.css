@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
     /* Background color */
     --background-color: #EDF2F4;
@@ -19,4 +21,98 @@
     --white: #FFFFFF;
 }
 
-/* test */
+/* Boilerplate font setup */
+
+/* Space Mono */
+.space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Frank Ruhl Libre */
+.frank-ruhl-libre-regular {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.frank-ruhl-libre-bold {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.frank-ruhl-libre-regular-italic {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.frank-ruhl-libre-bold-italic {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Space Grotesk */
+.space-grotesk-regular {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.space-grotesk-bold {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.space-grotesk-regular-italic {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.space-grotesk-bold-italic {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
