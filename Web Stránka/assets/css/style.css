@@ -15,7 +15,7 @@
     --pastel-dark-grey: #8D99AE;
     --pastel-dark-blue: #2B2D42;
     --black: #000000;
-    --pastel-ligter-red: #EF233C;
+    --pastel-lighter-red: #EF233C;
     --pastel-lighter-grey: #C5C5C5;
     --pastel-darker-red: #D90429;
     --white: #FFFFFF;
@@ -123,6 +123,191 @@ p {
 
 a {
     font-size: 24px;
+}
+
+/* Universal Design */
+.header {
+    background-color: var(--pastel-dark-grey);
+}
+
+.container {
+    background-color: var(--background-color);
+}
+
+h1,h2 {
+    color: var(--pastel-dark-blue);
+}
+
+/* Mobile Design */
+@media screen and (max-width: 390px) {
+
+    .container {
+        width: 390px;
+        height: 1282px;
+    }
+
+    /* Header */
+    .header {
+        height: 16.666666666667%;
+        width: 100%;
+    }
+
+    /* Dlazdice */
+    .tiles {
+        width: 342px;
+        height: 684px;
+        margin-right: 25px;
+        margin-left: 25px;
+        display: grid;
+        grid-template-columns: 4;
+        grid-template-rows: 7;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    /* Prvy riadok */
+    .tiles__top-left {
+        background-color: var(--pastel-lighter-red);
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__top-left--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tiles__top-right-1 {
+        background-color: var(--pastel-dark-grey);
+        grid-column: 3 /4;
+        grid-row: 1 / 2;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__top-right-1--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tiles__top-right-2 {
+        background-color: var(--pastel-dark-grey);
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__top-right-2--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Druhy riadok */
+    .tiles__bottom-left-1 {
+        background-color: var(--pastel-dark-grey);
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__bottom-left-1--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tiles__bottom-left-2 {
+        background-color: var(--pastel-dark-grey);
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__bottom-left-2--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tiles__bottom-right {
+        background-color: var(--pastel-lighter-red);
+        grid-column: 2 / 4;
+        grid-row: 3 / 5;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__bottom-right--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Treti riadok */
+    .tiles__bottom-left {
+        background-color: var(--pastel-lighter-red);
+        grid-column: 1 / 3;
+        grid-row: 5 / 7;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__bottom-left--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tiles__bottom-right-1 {
+        background-color: var(--pastel-dark-grey);
+        grid-column: 3 / 4;
+        grid-row: 5 / 6;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__bottom-right-1--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tiles__bottom-right-2 {
+        background-color: var(--pastel-dark-grey);
+        grid-column: 3 / 4;
+        grid-row: 6 / 7;
+        outline: 1px solid var(--pastel-grey);
+    }
+
+    .tiles__bottom-right-2--image {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Footer */
+    .footer {
+        width: 100%;
+        height: 120px;
+        background-color: var(--pastel-dark-grey);
+    }
 }
 
 
