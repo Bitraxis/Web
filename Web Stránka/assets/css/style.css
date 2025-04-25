@@ -1,0 +1,20 @@
+:root {
+    /* Background color */
+    --background-color: #EDF2F4;
+
+    /* Colors of items as per Material 3 Designs specifications */
+    --icon-color: #1E1E1E;
+    --surface-color: #1D1B20;
+    --outline-variant-color: #CAC4D0;
+
+    /* Pallete colors some from Material 3*/ 
+    --pastel-red: #FA5252;
+    --pastel-grey: #EDF2F4;
+    --pastel-dark-grey: #8D99AE;
+    --pastel-dark-blue: #2B2D42;
+    --black: #000000;
+    --pastel-ligter-red: #EF233C;
+    --pastel-lighter-grey: #C5C5C5;
+    --pastel-darker-red: #D90429;
+    --white: #FFFFFF;
+}
