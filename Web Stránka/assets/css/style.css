@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
     /* Background color */
@@ -134,6 +135,10 @@ a {
     background-color: var(--background-color);
 }
 
+.footer {
+    background-color: var(--pastel-dark-grey);
+}
+
 h1,h2 {
     color: var(--pastel-dark-blue);
 }
@@ -148,8 +153,34 @@ h1,h2 {
 
     /* Header */
     .header {
-        height: 16.666666666667%;
+        height: 65px;
         width: 100%;
+        display: flex;
+        border-bottom: 1px solid var(--pastel-dark-blue);
+        flex-shrink: 0;
+    }
+
+    .header__p {
+        margin-right: 145px;
+    }
+
+    .header__image--language {
+        margin-top: 20px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .header__image--dropdown {
+        margin-top: 20px;
+        margin-right: 12px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .header__image--menu {
+        margin-top: 7.5px;
+        width: 48px;
+        height: 48px;
     }
 
     /* Dlazdice */
@@ -302,11 +333,45 @@ h1,h2 {
         align-items: center;
     }
 
+    .zivotopis {
+        background-color: var(--pastel-darker-red);
+        border-radius: 40px;
+        border: 1px solid var(--white);
+        display: inline-flex;
+        margin-right: 25px;
+        margin-left: 25px;
+        padding-right: 8px;
+        align-items: flex-end;
+        width: 85%;
+        margin-top: 15px;
+    }
+
+    .zivotopis__image{
+        background-color: var(--pastel-grey);
+        border-radius: 40px;
+        border: 1px solid var(--black);
+    }
+
+    .zivotopis__a {
+        color: var(--pastel-grey);
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 10px;
+        margin-left: 15px;
+        text-decoration: none;
+    }
+    
+
     /* Footer */
     .footer {
         width: 100%;
         height: 120px;
         background-color: var(--pastel-dark-grey);
+        border-top: 1px solid var(--pastel-dark-blue);
     }
 }
 
