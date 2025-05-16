@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --primarna: #ffffff;                        /* Farba textu - biela */
   --sekundarna: #111111;                      /* Tmavé pozadie stránky */
   --prekrytie: rgba(0, 0, 0, 0.5);                /* Polopriehľadná čierna */
 
+  --font-main: 'Roboto', sans-serif;         /* Hlavné písmo */
 }
 
 * {
@@ -27,5 +30,85 @@ body {
   padding: 1rem;                              /* Vnútorné odsadenie */
 }
 
+.header {
+  width: 100vw;                               /* Šírka hlavičky */
+  height: 80vh;                              /* Výška hlavičky */
+  background-image: url('https://images.unsplash.com/photo-1617079114138-9cf245e006c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D0');    /* Pozadie hlavičky */
+  background-size: cover;                     /* Pokrytie pozadia */
+  background-position: center;                /* Vycentrovanie pozadia */
+  display: flex;                             /* Flexbox pre zarovnanie obsahu */
+  justify-content: center;                    /* Horizontálne vycentrovanie obsahu */
+  align-items: center;                       /* Vertikálne vycentrovanie obsahu */
+  position: relative;                /* Pozicovanie pre pseudo-element */
+
+}
+
+.header::before {
+  content: "";                             /* Prázdny obsah pre pseudo-element */
+  position: absolute;                       /* Absolútne pozicovanie */
+  inset: 0;                               /* Rozšírenie na všetky strany rodiča */
+  width: 100%;                             /* Šírka prekrytia */
+  height: 100%;                            /* Výška prekrytia */
+  background-color: var(--prekrytie);      /* Polopriehľadná čierna farba */
+  opacity: 0.5;                           /* Polopriehľadnosť prekrytia */
+  z-index: 0;                            /* Z-index pre prekrytie obsahu */
+}
+
+.header__div {
+  z-index: 5;                            /* Z-index pre obsah hlavičky */
+}
+
+.header__h1 {
+  font-size: 3rem;                            /* Veľkosť písma nadpisu */
+  color: var(--primarna);                     /* Farba textu - biela */
+  text-align: center;                         /* Zarovnanie textu na stred */
+  margin-bottom: 0.5rem;                     /* Spodný okraj nadpisu */
+
+}
+
+.header__p {
+
+  font-size: 1.5rem;                          /* Veľkosť písma popisu */
+  font-weight: 200 ;                        /* Tenké písmo */
+  color: #ddd;                     /* Farba textu - sedsie */
+  text-align: center;                         /* Zarovnanie textu na stred */
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 8;
+  grid-template-rows: 4;
+}
+
+
+.footer {
+  width: 100vw;                               /* Šírka päty */
+  height: 25vh;                              /* Výška päty */
+  background-image: url("https://plus.unsplash.com/premium_photo-1700483717331-6da3888bc3db?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");   /* Pozadie päty */
+  filter: blur(2px);                        /* Rozmazanie pozadia */
+  background-size: cover;                     /* Pokrytie pozadia */
+  background-position: center;                /* Vycentrovanie pozadia */
+  display: flex;                             /* Flexbox pre zarovnanie obsahu */
+  justify-content: center;                    /* Horizontálne vycentrovanie obsahu */
+  align-items: center;                       /* Vertikálne vycentrovanie obsahu */
+  position: relative;                /* Pozicovanie pre pseudo-element */
+}
+
+
+.footer::before {
+  content: "";                             /* Prázdny obsah pre pseudo-element */
+  position: absolute;                       /* Absolútne pozicovanie */
+  inset: 0;                               /* Rozšírenie na všetky strany rodiča */
+  width: 100%;                             /* Šírka prekrytia */
+  height: 100%;                            /* Výška prekrytia */
+  background-color: var(--prekrytie);      /* Polopriehľadná čierna farba */
+  opacity: 0.5;                           /* Polopriehľadnosť prekrytia */
+  z-index: 0;                            /* Z-index pre prekrytie obsahu */
+}
+
+.footer__div {
+  z-index: 5;                            /* Z-index pre obsah päty */
+  filter: blur(0);
+}
 
 
