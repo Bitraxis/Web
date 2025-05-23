@@ -166,27 +166,27 @@ h1,h2 {
 
     .header__image--language {
         margin-top: 20px;
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .header__image--dropdown {
         margin-top: 20px;
         margin-right: 12px;
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .header__image--menu {
         margin-top: 7.5px;
-        width: 48px;
-        height: 48px;
+        width: 3rem;
+        height: 3rem;
     }
 
     /* Dlazdice */
     .tiles {
-        width: 342px;
-        height: 684px;
+        width: 21.375rem;
+        height: 42.75rem;
         margin-right: 25px;
         margin-left: 25px;
         display: grid;
@@ -335,12 +335,12 @@ h1,h2 {
 
     .zivotopis {
         background-color: var(--pastel-darker-red);
-        border-radius: 40px;
+        border-radius: 2.5rem;
         border: 1px solid var(--white);
         display: inline-flex;
         margin-right: 25px;
         margin-left: 25px;
-        padding-right: 8px;
+        padding-right: 0.5rem;
         align-items: flex-end;
         width: 85%;
         margin-top: 15px;
@@ -348,7 +348,9 @@ h1,h2 {
 
     .zivotopis__image{
         background-color: var(--pastel-grey);
-        border-radius: 40px;
+        border-radius: 2.5rem;
+        width: 3rem;
+        height: 3rem;
         border: 1px solid var(--black);
     }
 
@@ -356,22 +358,97 @@ h1,h2 {
         color: var(--pastel-grey);
         text-align: center;
         font-family: Inter;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
         margin-bottom: 10px;
         margin-left: 15px;
         text-decoration: none;
+        width: 17.4375rem;
+        height: 3.125rem;
     }
     
 
     /* Footer */
     .footer {
-        width: 100%;
-        height: 120px;
+        width: 24.375rem;
+        height: 7.5rem;
+        display: grid;
         background-color: var(--pastel-dark-grey);
         border-top: 1px solid var(--pastel-dark-blue);
+        grid-template-columns: 6;
+        grid-template-rows: 3;
+    }
+
+    .footer__image--top-left {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: 2.25rem;
+        height: 2.25rem;
+        padding-left: 1.44rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.72rem;
+        padding-right: 1.75rem;
+    }
+
+    .footer__p--1 {
+        grid-column: 2 / 5 ;
+        grid-row: 1 / 2 ;
+        width: 10rem;
+        height: 1.4375rem;
+        justify-content: center;
+        padding-left: 1.75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.72rem;
+        padding-right: 1.75rem;
+        margin: 0 0 0 0;
+    }
+
+    .footer__image--top-right {
+        grid-column: 5 / 6;
+        grid-row: 1 / 2;
+        width: 2.25rem;
+        height: 2.25rem;
+        padding-left: 1.75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.72rem;
+        padding-right: 1.44rem;
+    }
+
+    .footer__image--bottom-left {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        width: 2.25rem;
+        height: 2.25rem;
+        padding-top: 0.72rem;
+        padding-left: 1.44rem;
+        padding-bottom: 0.75rem;
+        padding-right: 1.75rem;
+    }
+
+    .footer__p--2 {
+        grid-column: 2 / 5;
+        grid-row: 2 / 3;
+        width: 10rem;
+        height: 1.4375rem;
+        justify-content: center;
+        padding-left: 1.75rem;
+        padding-top: 0.72rem;
+        padding-right: 1.75rem;
+        padding-bottom: 0.75rem;
+        margin: 0 0 0 0;
+    }
+
+    .footer__image--bottom-right {
+        grid-column: 5 / 6;
+        grid-row: 2 / 3;
+        width: 2.25rem;
+        height: 2.25rem;
+        padding-left: 1.75rem;
+        padding-top: 0.72rem;
+        padding-right: 1.44rem;
+        padding-bottom: 0.75rem;
     }
 }
 
