@@ -144,7 +144,7 @@ h1,h2 {
 }
 
 /* Mobile Design */
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 390px) {
 
     .container {
         width: 24.375rem;
