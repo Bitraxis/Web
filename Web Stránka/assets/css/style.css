@@ -267,7 +267,7 @@ h2 {
     }
     .tiles__top-left--audio {
         display: none;
-        width: 200px;
+        width: 100%;
     }
     .tiles:has(.tiles__top-right-1:hover) .tiles__top-left {
         display: flex;
@@ -355,7 +355,7 @@ h2 {
     }
     .tiles__bottom-right--audio {
         display: none;
-        width: 200px;
+        width: 100%;
     }
     .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-right {
         display: flex;
@@ -391,7 +391,7 @@ h2 {
     }
     .tiles__bottom-left--audio {
         display: none;
-        width: 200px;
+        width: 100%;
     }
     .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-left {
         display: flex;
