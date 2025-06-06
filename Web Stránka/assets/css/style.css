@@ -268,7 +268,7 @@ h2 {
     .tiles:has(.tiles__top-right-1:hover) .tiles__top-left {
         display: flex;
         background-image: url(../images/Nagy\ -\ Claude\ Monet.png);
-        background-color: var(--white);
+        background-size: cover;
     }
     .tiles:has(.tiles__top-right-2:hover) .tiles__top-left {
         background-image: none;
@@ -336,6 +336,7 @@ h2 {
     .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-right {
         display: flex;
         background-image: url("../images/izba\ -\ Nagy.svg");
+        background-size: cover;
     }
     .tiles:has(.tiles__top-bottom-left-2:hover) .tiles__bottom-right {
         background-image: none;
@@ -351,6 +352,7 @@ h2 {
     .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-left {
         display: flex;
         background-image: url("../images/Nagy\ -\ Kyberšikana-1.png");
+        background-size: cover;
     }
     .tiles:has(.tiles__top-bottom-right-2:hover) .tiles__bottom-left {
         background-image: none;
