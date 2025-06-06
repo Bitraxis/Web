@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/images/favicon.png">
-    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
@@ -41,7 +40,10 @@
                 <div class="tiles" id="tiles">
 
                     <!-- Prvý riadok -->
-                    <div class="tiles__top-left">
+                    <div class="tiles__top-left"> 
+                        <audio class="tiles__top-left--audio">
+                            <source src="assets/audio/Dominik Nagy - haha.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
 
                     <div class="tiles__top-right-1">
@@ -62,10 +64,16 @@
                     </div>
 
                     <div class="tiles__bottom-right">
+                        <audio class="tiles__bottom-right--audio">
+                            <source src="assets/audio/Nagy - Generacia.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
 
                     <!-- Tretí riadok -->
                     <div class="tiles__bottom-left">
+                        <audio class="tiles__bottom-left--audio">
+                            <source src="assets/audio/Nagy - Masterpiece.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
 
                     <div class="tiles__bottom-right-1">
@@ -88,12 +96,12 @@
 
             <!-- Footer -->
             <footer class="footer">
-                <a href="mailto:hyauzane@proton.me"><image class="footer__image--top-left" src="assets/images/Mail.png"></a>
+                <a class="footer__image--top-left" href="mailto:hyauzane@proton.me"><image src="assets/images/Mail.png"></a>
                 <p class="footer__p--1 space-mono-regular">Dominik Nagy©</p>
-                <a href="https://github.com/Bitraxis"><image class="footer__image--top-right" src="assets/images/Github.png"></a>
-                <a href="https://www.instagram.com/hyauzane/"><image class="footer__image--bottom-left" src="assets/images/Instagram.png"></a>
+                <a class="footer__image--top-right" href="https://github.com/Bitraxis"><image src="assets/images/Github.png"></a>
+                <a class="footer__image--bottom-left" href="https://www.instagram.com/hyauzane/"><image src="assets/images/Instagram.png"></a>
                 <p class="footer__p--2 space-mono-regular">Cookies</p>
-                <a href="tel:+421950812004"><image class="footer__image--bottom-right" src="assets/images/Telefon.png"></a>
+                <a class="footer__image--bottom-right" href="tel:+421950812004"><image src="assets/images/Telefon.png"></a>
             </footer>
 
         </div>

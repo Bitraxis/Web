@@ -265,6 +265,9 @@ h2 {
         outline: 1px solid var(--pastel-grey);
         background-image: none;
     }
+    .tiles__top-left--audio {
+        display: none;
+    }
     .tiles:has(.tiles__top-right-1:hover) .tiles__top-left {
         display: flex;
         background-image: url("../images/Nagy\ -\ Claude\ Monet.png");
@@ -279,6 +282,15 @@ h2 {
         display: flex;
         background-image: url("../images/HTML-basic.png");
         background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left {
+        display: flex;
+        background-image: none;
+        background-color: none;
+        background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left--audio {
+        display: flex;
     }
     .tiles__top-right-1 {
         background-color: var(--pastel-dark-grey);
@@ -340,6 +352,9 @@ h2 {
         outline: 1px solid var(--pastel-grey);
         background-image: none;
     }
+    .tiles__bottom-right--audio {
+        display: none;
+    }
     .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-right {
         display: flex;
         background-image: url("../images/izba\ -\ Nagy.svg");
@@ -355,6 +370,15 @@ h2 {
         background-image: url("../images/Css-MediaBasic.png");
         background-size: cover;
     }
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left {
+        display: flex;
+        background-image: none;
+        background-color: none;
+        background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left--audio {
+        display: flex;
+    }
     /* Treti riadok */
     .tiles__bottom-left {
         background-color: var(--pastel-lighter-red);
@@ -362,6 +386,9 @@ h2 {
         grid-row: 5 / 7;
         outline: 1px solid var(--pastel-grey);
         background-image: none;
+    }
+    .tiles__bottom-left--audio {
+        display: none;
     }
     .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-left {
         display: flex;
@@ -377,6 +404,15 @@ h2 {
         display: flex;
         background-image: url("../images/Css-Selectors.png");
         background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left {
+        display: flex;
+        background-image: none;
+        background-color: none;
+        background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left--audio {
+        display: flex;
     }
     .tiles__bottom-right-1 {
         background-color: var(--pastel-dark-grey);
