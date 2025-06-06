@@ -294,7 +294,13 @@ h2 {
         background-size: cover;
     }
     .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left--audio {
-        display: block;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        justify-items: center;
+        align-items: center;
+        align-self: center;
+        align-content: center;
     }
     .tiles__top-right-1 {
         background-color: var(--pastel-dark-grey);
@@ -375,14 +381,20 @@ h2 {
         background-image: url("../images/Css-MediaBasic.png");
         background-size: cover;
     }
-    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left {
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-right {
         display: flex;
         background-image: none;
         background-color: none;
         background-size: cover;
     }
-    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left--audio {
-        display: block;
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-right--audio {
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        justify-items: center;
+        align-items: center;
+        align-self: center;
+        align-content: center;
     }
     /* Treti riadok */
     .tiles__bottom-left {
@@ -411,14 +423,20 @@ h2 {
         background-image: url("../images/Css-Selectors.png");
         background-size: cover;
     }
-    .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left {
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left {
         display: flex;
         background-image: none;
         background-color: none;
         background-size: cover;
     }
-    .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left--audio {
-        display: block;
+    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left--audio {
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        justify-items: center;
+        align-items: center;
+        align-self: center;
+        align-content: center;
     }
     .tiles__bottom-right-1 {
         background-color: var(--pastel-dark-grey);
