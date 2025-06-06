@@ -263,13 +263,13 @@ h2 {
         grid-column: 1 / 3;
         grid-row: 1 / 3;
         outline: 1px solid var(--pastel-grey);
+        background-image: none;
     }
-    .tiles__top-left--image {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: center;
-        align-items: center;
+    .tiles:has(.tiles__top-right-1:hover) .tiles__top-left {
+        background-image: url(../images/Nagy\ -\ Claude\ Monet.png);
+    }
+    .tiles:has(.tiles__top-right-2:hover) .tiles__top-left {
+        background-image: none;
     }
     .tiles__top-right-1 {
         background-color: var(--pastel-dark-grey);
@@ -329,13 +329,13 @@ h2 {
         grid-column: 2 / 4;
         grid-row: 3 / 5;
         outline: 1px solid var(--pastel-grey);
+        background-image: none;
     }
-    .tiles__bottom-right--image {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: center;
-        align-items: center;
+    .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-right {
+        background-image: url("../images/izba\ -\ Nagy.svg");
+    }
+    .tiles:has(.tiles__top-bottom-left-2:hover) .tiles__bottom-right {
+        background-image: none;
     }
     /* Treti riadok */
     .tiles__bottom-left {
@@ -343,13 +343,13 @@ h2 {
         grid-column: 1 / 3;
         grid-row: 5 / 7;
         outline: 1px solid var(--pastel-grey);
+        background-image: none;
     }
-    .tiles__bottom-left--image {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: center;
-        align-items: center;
+    .tiles:has(.tiles__top-right-1:hover) .tiles__bottom-left {
+        background-image: url("../images/Nagy\ -\ Kyberšikana-1.png");
+    }
+    .tiles:has(.tiles__top-bottom-right-2:hover) .tiles__bottom-left {
+        background-image: none;
     }
     .tiles__bottom-right-1 {
         background-color: var(--pastel-dark-grey);
