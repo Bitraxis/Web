@@ -267,12 +267,17 @@ h2 {
     }
     .tiles:has(.tiles__top-right-1:hover) .tiles__top-left {
         display: flex;
-        background-image: url(../images/Nagy\ -\ Claude\ Monet.png);
+        background-image: url("../images/Nagy\ -\ Claude\ Monet.png");
         background-size: cover;
     }
     .tiles:has(.tiles__top-right-2:hover) .tiles__top-left {
         display: flex;
-        background-image: url(../images/Pygame.png);
+        background-image: url("../images/Pygame.png");
+        background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-left-1:hover) .tiles__top-left {
+        display: flex;
+        background-image: url("../images/HTML-basic.png");
         background-size: cover;
     }
     .tiles__top-right-1 {
@@ -340,11 +345,15 @@ h2 {
         background-image: url("../images/izba\ -\ Nagy.svg");
         background-size: cover;
     }
-    .tiles:has(.tiles__top-right-2:hover) .tiles__top-left {
+    .tiles:has(.tiles__top-right-2:hover) .tiles__bottom-right {
+        display: flex;
         background-image: url("../images/Python-Simple.png");
+        background-size: cover;
     }
-    .tiles:has(.tiles__top-bottom-left-2:hover) .tiles__bottom-right {
-        background-image: none;
+    .tiles:has(.tiles__bottom-left-1:hover) .tiles__bottom-right {
+        display: flex;
+        background-image: url("../images/Css-MediaBasic.png");
+        background-size: cover;
     }
     /* Treti riadok */
     .tiles__bottom-left {
@@ -359,11 +368,15 @@ h2 {
         background-image: url("../images/Nagy\ -\ Kyberšikana-1.png");
         background-size: cover;
     }
-    .tiles:has(.tiles__top-right-2:hover) .tiles__top-left {
-        background-image: none;
+    .tiles:has(.tiles__top-right-2:hover) .tiles__bottom-left {
+        display: flex;
+        background-image: url("../images/Pygame\ -\ TextGame.png");
+        background-size: cover;
     }
-    .tiles:has(.tiles__top-bottom-right-2:hover) .tiles__bottom-left {
-        background-image: none;
+    .tiles:has(.tiles__bottom-left-1:hover) .tiles__bottom-left {
+        display: flex;
+        background-image: url("../images/Css-Selectors.png");
+        background-size: cover;
     }
     .tiles__bottom-right-1 {
         background-color: var(--pastel-dark-grey);
