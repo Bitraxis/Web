@@ -413,6 +413,7 @@ h2 {
     }
     .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left--audio {
         display: flex;
+        
     }
     .tiles__bottom-right-1 {
         background-color: var(--pastel-dark-grey);
