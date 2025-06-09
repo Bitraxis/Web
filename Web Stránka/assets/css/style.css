@@ -289,18 +289,20 @@ h2 {
     }
     .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left {
         display: flex;
-        background-image: none;
+        background-image: url(../images/OIP.jpg);
         background-color: none;
         background-size: cover;
     }
-    .tiles:has(.tiles__bottom-left-2:hover) .tiles__top-left--audio {
+    .tiles:has(.tiles__bottom-right-1:hover) .tiles__top-left {
         display: flex;
-        justify-content: center;
-        justify-self: center;
-        justify-items: center;
-        align-items: center;
-        align-self: center;
-        align-content: center;
+        background-image: url("../images/OIP.jpg");
+        background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-right-2:hover) .tiles__top-left {
+        display: flex;
+        background-image: url("../images/OIP.jpg");
+        background-color: none;
+        background-size: cover;
     }
     .tiles__top-right-1 {
         background-color: var(--pastel-dark-grey);
@@ -383,18 +385,20 @@ h2 {
     }
     .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-right {
         display: flex;
-        background-image: none;
+        background-image: url("../images/OIP.jpg");
         background-color: none;
         background-size: cover;
     }
-    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-right--audio {
+    .tiles:has(.tiles__bottom-right-1:hover) .tiles__bottom-right {
         display: flex;
-        justify-content: center;
-        justify-self: center;
-        justify-items: center;
-        align-items: center;
-        align-self: center;
-        align-content: center;
+        background-image: url("../images/OIP.jpg");
+        background-size: cover;
+    }
+    .tiles:has(.tiles__bottom-right-2:hover) .tiles__bottom-right {
+        display: flex;
+        background-image: url("../images/OIP.jpg");
+        background-color: none;
+        background-size: cover;
     }
     /* Treti riadok */
     .tiles__bottom-left {
@@ -425,19 +429,22 @@ h2 {
     }
     .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left {
         display: flex;
-        background-image: none;
+        background-image: url("../images/OIP.jpg");
         background-color: none;
         background-size: cover;
     }
-    .tiles:has(.tiles__bottom-left-2:hover) .tiles__bottom-left--audio {
+    .tiles:has(.tiles__bottom-right-1:hover) .tiles__bottom-left {
         display: flex;
-        justify-content: center;
-        justify-self: center;
-        justify-items: center;
-        align-items: center;
-        align-self: center;
-        align-content: center;
+        background-image: url("../images/OIP.jpg");
+        background-size: cover;
     }
+    .tiles:has(.tiles__bottom-right-2:hover) .tiles__bottom-left {
+        display: flex;
+        background-image: url("../images/OIP.jpg");
+        background-color: none;
+        background-size: cover;
+    }
+
     .tiles__bottom-right-1 {
         background-color: var(--pastel-dark-grey);
         grid-column: 3 / 4;
