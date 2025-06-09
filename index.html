@@ -58,13 +58,51 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="marquee"><span>Welcome to Bitraxis's Totally Rad 90's Website! ✨</span></div>
-        <h1>Bitraxis's Website</h1>
-        <p><a href="./Web Stránka/index.html">Portfolio</a></p>
-        <hr style="border: 1px dashed #00FF00;">
-        <p>Check out my awesome projects and retro vibes!</p>
-        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Dancing Banana" style="margin-top:20px; border:2px solid #FFD700; border-radius:8px;">
+    <div class="container" style="box-shadow: none; border-radius: 0; border: 2px solid #fff; background: #c0c0c0; padding: 0; font-family: Tahoma, Geneva, Verdana, sans-serif;">
+        <!-- Title Bar -->
+        <div style="background: linear-gradient(90deg, #000080 80%, #00a); color: #fff; padding: 6px 10px; display: flex; align-items: center; border-bottom: 2px solid #fff;">
+            <img src="https://win98icons.alexmeub.com/icons/png/computer-4.png" alt="icon" style="width:20px;height:20px;margin-right:8px;">
+            <span style="font-weight:bold; flex:1;">Bitraxis's Website</span>
+            <button onclick="window.close()" style="background:#c0c0c0; border:2px outset #fff; width:20px; height:20px; font-weight:bold; color:#000; margin-left:4px; cursor:pointer; padding:0;">✕</button>
+        </div>
+        <!-- Menu Bar -->
+        <div style="background: #e0e0e0; border-bottom: 1px solid #808080; padding: 4px 10px; font-size: 0.95em;">
+            <span style="margin-right:20px; cursor:pointer;" onclick="alert('File menu coming soon!')"><u>F</u>ile</span>
+            <span style="margin-right:20px; cursor:pointer;" onclick="alert('Edit menu coming soon!')"><u>E</u>dit</span>
+            <span style="margin-right:20px; cursor:pointer;" onclick="alert('View menu coming soon!')"><u>V</u>iew</span>
+            <span style="cursor:pointer;" onclick="alert('Help coming soon!')"><u>H</u>elp</span>
+        </div>
+        <!-- Marquee -->
+        <div class="marquee" style="background:#000080; color:#FFD700; border-bottom:2px inset #fff; margin-bottom:0;">
+            <span>Welcome to Bitraxis's Website! ✨</span>
+        </div>
+        <!-- Main Content -->
+        <div style="padding: 24px 30px 30px 30px;">
+            <h1 style="font-family: 'MS Sans Serif', Tahoma, Geneva, Verdana, sans-serif; color:#000080; text-shadow:1px 1px 0 #fff, 2px 2px 0 #808080; margin-bottom: 16px; font-size:2em;">Bitraxis's Website</h1>
+            <p>
+                <a href="./Web Stránka/index.html" target="_blank" style="border:1px solid #808080; background:#e0e0e0; color:#000080; padding:2px 8px; text-decoration:none; font-family:'MS Sans Serif',Tahoma,sans-serif; box-shadow:1px 1px 0 #fff inset;">Portfolio</a>
+            </p>
+            <hr style="border: 1px dashed #00FF00; margin: 18px 0;">
+            <p style="color:#000;">Check out my awesome projects and retro vibes!</p>
+            <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Dancing Banana" style="margin-top:20px; border:2px inset #808080; border-radius:0; background:#fff;">
+            <!-- Interactive 98-style button -->
+            <div style="margin-top:30px;">
+                <button id="surpriseBtn" style="font-family:'MS Sans Serif',Tahoma,sans-serif; background:#e0e0e0; border:2px outset #fff; color:#000; padding:6px 18px; font-size:1em; cursor:pointer;">Click Me!</button>
+                <span id="surpriseMsg" style="margin-left:16px; color:#008000; font-weight:bold;"></span>
+            </div>
+        </div>
     </div>
+    <script>
+        // 98-style button interactivity
+        const btn = document.getElementById('surpriseBtn');
+        const msg = document.getElementById('surpriseMsg');
+        btn.addEventListener('mousedown', () => btn.style.border = '2px inset #808080');
+        btn.addEventListener('mouseup', () => btn.style.border = '2px outset #fff');
+        btn.addEventListener('mouseleave', () => btn.style.border = '2px outset #fff');
+        btn.addEventListener('click', () => {
+            msg.textContent = "Whoa! It's the 90's!";
+            setTimeout(() => msg.textContent = '', 2000);
+        });
+    </script>
 </body>
 </html>
