@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
-.container.win98-container {
+.container.win98 {
     width: 600px;
     margin: 40px auto;
     background: #c0c0c0;
@@ -15,7 +15,7 @@ body {
     padding: 0;
     font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
-.win98-titlebar {
+.win98__titlebar {
     background: linear-gradient(90deg, #000080 80%, #00a);
     color: #fff;
     padding: 6px 10px;
@@ -23,16 +23,16 @@ body {
     align-items: center;
     border-bottom: 2px solid #fff;
 }
-.win98-titlebar-icon {
+.win98__titlebar-icon {
     width: 20px;
     height: 20px;
     margin-right: 8px;
 }
-.win98-titlebar-title {
+.win98__titlebar-title {
     font-weight: bold;
     flex: 1;
 }
-.win98-titlebar-close {
+.win98__titlebar-close {
     background: #c0c0c0;
     border: 2px outset #fff;
     width: 20px;
@@ -43,26 +43,26 @@ body {
     cursor: pointer;
     padding: 0;
 }
-.win98-menubar {
+.win98__menubar {
     background: #e0e0e0;
     border-bottom: 1px solid #808080;
     padding: 4px 10px;
     font-size: 0.95em;
 }
-.win98-menu {
+.win98__menu {
     margin-right: 20px;
     cursor: pointer;
 }
-.win98-menu:last-child {
+.win98__menu:last-child {
     margin-right: 0;
 }
-.win98-marquee {
+.win98__marquee {
     background: #000080;
     color: #FFD700;
     border-bottom: 2px inset #fff;
     margin-bottom: 0;
 }
-.marquee {
+.win98__marquee.marquee {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -70,7 +70,7 @@ body {
     border-bottom: 2px dashed #FFD700;
     margin-bottom: 20px;
 }
-.marquee span {
+.win98__marquee-text {
     display: inline-block;
     padding-left: 100%;
     animation: marquee 10s linear infinite;
@@ -79,17 +79,17 @@ body {
     0%   { transform: translate3d(0, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
 }
-.win98-main-content {
+.win98__main-content {
     padding: 24px 30px 30px 30px;
 }
-.win98-main-title {
+.win98__main-title {
     font-family: 'MS Sans Serif', Tahoma, Geneva, Verdana, sans-serif;
     color: #000080;
     text-shadow: 1px 1px 0 #fff, 2px 2px 0 #808080;
     margin-bottom: 16px;
     font-size: 2em;
 }
-.win98-portfolio-link {
+.win98__portfolio-link {
     border: 1px solid #808080;
     background: #e0e0e0;
     color: #000080;
@@ -98,23 +98,23 @@ body {
     font-family: 'MS Sans Serif', Tahoma, sans-serif;
     box-shadow: 1px 1px 0 #fff inset;
 }
-.win98-hr {
+.win98__hr {
     border: 1px dashed #00FF00;
     margin: 18px 0;
 }
-.win98-desc {
+.win98__desc {
     color: #000;
 }
-.win98-banana {
+.win98__banana {
     margin-top: 20px;
     border: 2px inset #808080;
     border-radius: 0;
     background: #fff;
 }
-.win98-btn-row {
+.win98__btn-row {
     margin-top: 30px;
 }
-.win98-btn {
+.win98__btn {
     font-family: 'MS Sans Serif', Tahoma, sans-serif;
     background: #e0e0e0;
     border: 2px outset #fff;
@@ -123,12 +123,12 @@ body {
     font-size: 1em;
     cursor: pointer;
 }
-.win98-surprise-msg {
+.win98__surprise-msg {
     margin-left: 16px;
     color: #008000;
     font-weight: bold;
 }
-.win98-taskbar {
+.win98__taskbar {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -141,7 +141,7 @@ body {
     align-items: center;
     z-index: 100;
 }
-.win98-start-btn {
+.win98__start-btn {
     margin-left: 6px;
     background: #e0e0e0;
     border: 2px outset #fff;
@@ -155,15 +155,15 @@ body {
     background-repeat: no-repeat;
     background-position: 6px center;
 }
-.win98-taskbar-spacer {
+.win98__taskbar-spacer {
     flex: 1;
 }
-.win98-taskbar-clock {
+.win98__taskbar-clock {
     margin-right: 16px;
     font-family: 'MS Sans Serif', Tahoma, sans-serif;
     color: #000080;
 }
-.win98-modal {
+.win98__modal {
     display: none;
     position: fixed;
     left: 0;
@@ -175,14 +175,14 @@ body {
     align-items: center;
     justify-content: center;
 }
-.win98-modal-content {
+.win98__modal-content {
     background: #fff;
     border: 2px solid #000080;
     border-radius: 6px;
     width: 340px;
     box-shadow: 0 0 16px #0008;
 }
-.win98-modal-header {
+.win98__modal-header {
     background: #000080;
     color: #fff;
     padding: 6px 10px;
@@ -190,7 +190,7 @@ body {
     font-weight: bold;
     border-bottom: 2px solid #fff;
 }
-.win98-modal-textarea {
+.win98__modal-textarea {
     width: 96%;
     height: 120px;
     margin: 10px 2%;
@@ -199,7 +199,7 @@ body {
     border: 1px solid #808080;
     resize: none;
 }
-.win98-modal-footer {
+.win98__modal-footer {
     text-align: right;
     padding: 8px 10px;
 }
