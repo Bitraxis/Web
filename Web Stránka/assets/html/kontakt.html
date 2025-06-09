@@ -1,21 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Tiles</title>
+  <title>Kontakt</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="kontakt.css">
+  <link rel="icon" href="../images/favicon.png">
 </head>
 <body>
-  <div class="tile-container">
-    <div class="tile">
-      <div class="tile-front">Front</div>
-      <div class="tile-back">Back</div>
-    </div>
-    <div class="tile">
-      <div class="tile-front">Hello</div>
-      <div class="tile-back">World</div>
-    </div>
+  <header class="header">
+            <p class="header__p space-mono-regular">dominiknagy</p>
+            <img class="header__image--language" src="../images/54616_25527.png">
+            <img class="header__image--dropdown" src="../images/54616_25429.png">
+            <a href="../../index.html"><img class="header__image--menu" src="../images/4049_13563.png"></a>
+  </header>
+  <div class="contact">  
+    <div class="contact__title"  title="Contact">Kontakt</div>
+    <form class="contact__form" action="https://formsubmit.co/hyauzane@proton.me" method="POST">
+      <div class="contact__form-group">
+        <label class="contact__label" for="meno"  title="First Name">Meno</label>
+        <input class="contact__input" type="text" id="name" name="name" placeholder="Meno">
+      </div>
+      <div class="contact__form-group">
+        <label class="contact__label" for="priezvisko"  title="Surname">Priezvisko</label>
+        <input class="contact__input" type="text" id="surname" name="surname" placeholder="Priezvisko">
+      </div>
+      <div class="contact__form-group">
+        <label class="contact__label" for="email">Email</label>
+        <input class="contact__input" type="email" id="email" name="email" placeholder="Email">
+      </div>
+      <div class="contact__form-group">
+        <label class="contact__label" for="sprava"  title="Message">Správa</label>
+        <textarea class="contact__textarea" id="sprava" name="message" placeholder="Správa"></textarea>
+      </div>
+      <div class="contact__form-group">
+        <button class="contact__button" type="submit"  title="Send">Poslať</button>
+      </div>
+    </form>
+    <footer class="footer">
+      <a class="footer__image--top-left" href="mailto:hyauzane@proton.me"><image src="../images/Mail.png"></a>
+      <p class="footer__p--1 space-mono-regular">Dominik Nagy©</p>
+      <a class="footer__image--top-right" href="https://github.com/Bitraxis"><image src="../images/Github.png"></a>
+      <a class="footer__image--bottom-left" href="https://www.instagram.com/hyauzane/"><image src="../images/Instagram.png"></a>
+      <p class="footer__p--2 space-mono-regular">Cookies</p>
+      <a class="footer__image--bottom-right" href="tel:+421950812004"><image src="../images/Telefon.png"></a>
+    </footer>
+
   </div>
 </body>
-</html>
