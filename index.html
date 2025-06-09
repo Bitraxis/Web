@@ -3,59 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitraxis WebSite</title>
+    <title>Bitraxis Website</title>
     <link rel="stylesheet" href="/Web Stránka/assets/css/normalize.css">
-    <style>
-        body {
-            background: #000080 url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
-            color: #00FF00;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 600px;
-            margin: 40px auto;
-            background: #000040cc;
-            border: 4px double #FFD700;
-            box-shadow: 0 0 20px #00FFFF;
-            padding: 30px;
-            border-radius: 10px;
-        }
-        h1 {
-            font-size: 2.5em;
-            text-shadow: 2px 2px 0 #FFD700, 4px 4px 0 #000;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-        a {
-            color: #FFD700;
-            text-decoration: underline;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        a:hover {
-            color: #00FFFF;
-            background: #222;
-        }
-        .marquee {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            box-sizing: border-box;
-            border-bottom: 2px dashed #FFD700;
-            margin-bottom: 20px;
-        }
-        .marquee span {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 10s linear infinite;
-        }
-        @keyframes marquee {
-            0%   { transform: translate(0, 0); }
-            100% { transform: translate(-100%, 0); }
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container" style="box-shadow: none; border-radius: 0; border: 2px solid #fff; background: #c0c0c0; padding: 0; font-family: Tahoma, Geneva, Verdana, sans-serif;">
@@ -108,56 +58,56 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // 98-style button interactivity
-        const btn = document.getElementById('surpriseBtn');
-        const msg = document.getElementById('surpriseMsg');
-        btn.addEventListener('mousedown', () => btn.style.border = '2px inset #808080');
-        btn.addEventListener('mouseup', () => btn.style.border = '2px outset #fff');
-        btn.addEventListener('mouseleave', () => btn.style.border = '2px outset #fff');
-        btn.addEventListener('click', () => {
-            msg.textContent = "Whoa! Ahh! Do it again, OwO!";
-            setTimeout(() => msg.textContent = '', 2000);
-        });
-
-        // Taskbar clock
-        function updateClock() {
-            const clock = document.getElementById('taskbarClock');
-            const now = new Date();
-            let h = now.getHours(), m = now.getMinutes();
-            clock.textContent = h.toString().padStart(2,'0') + ':' + m.toString().padStart(2,'0');
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Menu bar logic
-        const fileMenu = document.querySelector('span[onclick*="File menu"]');
-        const editMenu = document.querySelector('span[onclick*="Edit menu"]');
-        const viewMenu = document.querySelector('span[onclick*="View menu"]');
-
-        // File menu: open update board
-        fileMenu.onclick = function(e) {
-            document.getElementById('updateModal').style.display = 'flex';
-        };
-
+    <div class="container win98-container">
+        <!-- Title Bar -->
+        <div class="win98-titlebar">
+            <img src="https://win98icons.alexmeub.com/icons/png/computer-4.png" alt="icon" class="win98-titlebar-icon">
+            <span class="win98-titlebar-title">Bitraxis Website</span>
+            <button type="button" onclick="window.close()" class="win98-titlebar-close">✕</button>
+        <!-- Menu Bar -->
+        <div class="win98-menubar">
+            <span class="win98-menu win98-menu-file"><u>F</u>ile</span>
+            <span class="win98-menu win98-menu-edit"><u>E</u>dit</span>
+            <span class="win98-menu win98-menu-view"><u>V</u>iew</span>
+            <span class="win98-menu win98-menu-help" onclick="alert('Help coming soon!')"><u>H</u>elp</span>
+        </div>
+        <!-- Marquee -->
+        <div class="marquee win98-marquee">
+            <span>Welcome to Bitraxis Website! ✨</span>
+        </div>
+        <!-- Main Content -->
+        <div class="win98-main-content">
+            <h1 class="win98-main-title">Bitraxis Website</h1>
+            <p>
+                <a href="./Web Stránka/index.html" target="_blank" class="win98-portfolio-link">Portfolio</a>
+            </p>
+            <hr class="win98-hr">
+            <p class="win98-desc">Check out my awesome projects and retro vibes!</p>
+            <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Dancing Banana" class="win98-banana">
+            <!-- Interactive 98-style button -->
+            <div class="win98-btn-row">
+                <button type="button" id="surpriseBtn" class="win98-btn">Click Me!</button>
+                <span id="surpriseMsg" class="win98-surprise-msg"></span>
+            </div>
+        </div>
+    </div>
         // Update board close
-        function closeUpdateModal() {
-            document.getElementById('updateModal').style.display = 'none';
-        }
-
-        // Edit menu: enable drawing mode
+    <div id="taskbar" class="win98-taskbar">
+        <button type="button" id="startBtn" class="win98-start-btn">Start</button>
+        <div class="win98-taskbar-spacer"></div>
+        <span id="taskbarClock" class="win98-taskbar-clock"></span>
+    </div>
         let drawing = false, canvas, ctx;
         editMenu.onclick = function() {
-            if (!canvas) {
-                canvas = document.createElement('canvas');
-                canvas.style.position = 'fixed';
-                canvas.style.left = '0';
-                canvas.style.top = '0';
-                canvas.style.width = '100vw';
-                canvas.style.height = '100vh';
-                canvas.style.pointerEvents = 'auto';
-                canvas.style.zIndex = '150';
+    <div id="updateModal" class="win98-modal">
+        <div class="win98-modal-content">
+            <div class="win98-modal-header">Update Board</div>
+            <textarea id="updateText" class="win98-modal-textarea"></textarea>
+            <div class="win98-modal-footer">
+                <button type="button" onclick="closeUpdateModal()" class="win98-btn">Close</button>
+            </div>
+        </div>
+    </div>
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
                 ctx = canvas.getContext('2d');
