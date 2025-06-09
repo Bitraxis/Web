@@ -3,11 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nagy Web</title>
+    <title>Bitraxis WebSite</title>
+    <link rel="stylesheet" href="/Web Stránka/assets/css/normalize.css">
+    <style>
+        body {
+            background: #000080 url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 600px;
+            margin: 40px auto;
+            background: #000040cc;
+            border: 4px double #FFD700;
+            box-shadow: 0 0 20px #00FFFF;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 0 #FFD700, 4px 4px 0 #000;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        a {
+            color: #FFD700;
+            text-decoration: underline;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        a:hover {
+            color: #00FFFF;
+            background: #222;
+        }
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            border-bottom: 2px dashed #FFD700;
+            margin-bottom: 20px;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the site! It is under construction</h1>
-    <p><a href="sk-ka-Bitraxis/sk-ka-Bitraxis/index.html">sk-ka example</a></p>
-    <p><a href="./Web Stránka/index.html">Test Stranka</a></p>
+    <div class="container">
+        <div class="marquee"><span>Welcome to Bitraxis's Totally Rad 90's Website! ✨</span></div>
+        <h1>Bitraxis's Website</h1>
+        <p><a href="./Web Stránka/index.html">Portfolio</a></p>
+        <hr style="border: 1px dashed #00FF00;">
+        <p>Check out my awesome projects and retro vibes!</p>
+        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Dancing Banana" style="margin-top:20px; border:2px solid #FFD700; border-radius:8px;">
+    </div>
 </body>
 </html>
