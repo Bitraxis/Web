@@ -2,83 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitraxis Website</title>
-    <link rel="stylesheet" href="/Web Stránka/assets/css/normalize.css">
-    <link rel="stylesheet" href="main.css">
+    <title>Windows 98 Style File Explorer</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #008080;
+            font-family: 'VT323', monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .window {
+            background: #c0c0c0;
+            border: 2px solid #000;
+            width: 600px;
+            margin: 40px auto;
+            box-shadow: 8px 8px 0 #000;
+        }
+        .title-bar {
+            background: linear-gradient(90deg, #000080 80%, #1084d0 100%);
+            color: #fff;
+            padding: 6px 10px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .title-bar-buttons {
+            display: flex;
+            gap: 2px;
+        }
+        .title-bar-button {
+            width: 16px;
+            height: 16px;
+            background: #c0c0c0;
+            border: 1px solid #fff;
+            box-shadow: 1px 1px 0 #808080;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 8px 0;
+        }
+        a {
+            color: #000080;
+            text-decoration: none;
+            background: #fff;
+            padding: 2px 8px;
+            border: 1px solid #808080;
+            border-radius: 2px;
+            box-shadow: 1px 1px 0 #fff;
+            transition: background 0.2s;
+        }
+        a:hover {
+            background: #c0c0c0;
+            border-color: #000080;
+        }
+        .folder {
+            font-weight: bold;
+            margin-top: 16px;
+            color: #008000;
+        }
+    </style>
 </head>
 <body>
-    <div class="container win98">
-        <!-- Title Bar -->
-        <div class="win98__titlebar">
-            <img src="https://win98icons.alexmeub.com/icons/png/computer-4.png" alt="icon" class="win98__titlebar-icon">
-            <span class="win98__titlebar-title">Bitraxis Website</span>
-            <button type="button" onclick="window.close()" class="win98__titlebar-close">✕</button>
-            <!-- Menu Bar -->
-            <div class="win98__menubar">
-                <span class="win98__menu win98__menu--file"><u>F</u>ile</span>
-                <span class="win98__menu win98__menu--edit"><u>E</u>dit</span>
-                <span class="win98__menu win98__menu--view"><u>V</u>iew</span>
-                <span class="win98__menu win98__menu--help" onclick="alert('Help coming soon!')"><u>H</u>elp</span>
-            </div>
-            <!-- Marquee -->
-            <div class="win98__marquee marquee">
-                <span class="win98__marquee-text">Welcome to Bitraxis Website! ✨</span>
-            </div>
-            <!-- Main Content -->
-            <div class="win98__main-content">
-                <h1 class="win98__main-title">Bitraxis Website</h1>
-                <p>
-                    <a href="./Web Stránka/index.html" target="_blank" class="win98__portfolio-link">Portfolio</a>
-                </p>
-                <hr class="win98__hr">
-                <p class="win98__desc">Check out my awesome projects and retro vibes!</p>
-                <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Dancing Banana" class="win98__banana">
-                <!-- Interactive 98-style button -->
-                <div class="win98__btn-row">
-                    <button type="button" id="surpriseBtn" class="win98__btn">Click Me!</button>
-                    <span id="surpriseMsg" class="win98__surprise-msg"></span>
-                </div>
+    <div class="window">
+        <div class="title-bar">
+            <span>My Computer</span>
+            <div class="title-bar-buttons">
+                <div class="title-bar-button"></div>
+                <div class="title-bar-button"></div>
+                <div class="title-bar-button"></div>
             </div>
         </div>
-        <!-- Taskbar -->
-        <div id="taskbar" class="win98__taskbar">
-            <button type="button" id="startBtn" class="win98__start-btn">Start</button>
-            <div class="win98__taskbar-spacer"></div>
-            <span id="taskbarClock" class="win98__taskbar-clock"></span>
-        </div>
-        <!-- Update Modal -->
-        <div id="updateModal" class="win98__modal">
-            <div class="win98__modal-content">
-                <div class="win98__modal-header">Update Board</div>
-                <textarea id="updateText" class="win98__modal-textarea"></textarea>
-                <div class="win98__modal-footer">
-                    <button type="button" onclick="closeUpdateModal()" class="win98__btn">Close</button>
-                </div>
-            </div>
+        <div class="content" id="explorer-content">
+            <p>Loading files...</p>
         </div>
     </div>
     <script>
-        // Example: surprise button
-        document.getElementById('surpriseBtn').onclick = function() {
-            document.getElementById('surpriseMsg').textContent = "Surprise! 🎉";
-        };
+        // Helper to fetch directory listing via fetch API (requires server-side support)
+        async function fetchDirectory(path = '.') {
+            // This assumes your server supports directory listing as JSON at /api/list?dir=...
+            // You need to implement this API or use a static site generator to pre-generate the file list.
+            const res = await fetch(`/api/list?dir=${encodeURIComponent(path)}`);
+            if (!res.ok) return [];
+            return res.json();
+        }
 
-        // Taskbar clock
-        function updateClock() {
-            var clock = document.getElementById('taskbarClock');
-            if (clock) {
-                var now = new Date();
-                clock.textContent = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        // Recursively render directories and html files
+        function renderFiles(files, basePath = '') {
+            let html = '<ul>';
+            files.forEach(file => {
+                if (file.type === 'directory') {
+                    html += `<li class="folder">${file.name}/</li>`;
+                    html += renderFiles(file.children, basePath + file.name + '/');
+                } else if (file.type === 'file' && file.name.endsWith('.html')) {
+                    html += `<li><a href="${basePath + file.name}" target="_blank">${basePath + file.name}</a></li>`;
+                }
+            });
+            html += '</ul>';
+            return html;
+        }
+
+        // Main
+        (async function() {
+            const explorer = document.getElementById('explorer-content');
+            try {
+                const files = await fetchDirectory('.');
+                explorer.innerHTML = renderFiles(files);
+            } catch (e) {
+                explorer.innerHTML = '<p style="color:red;">Failed to load file list. Please set up the /api/list endpoint.</p>';
             }
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-
-        // Modal close function
-        function closeUpdateModal() {
-            document.getElementById('updateModal').style.display = 'none';
-        }
+        })();
     </script>
 </body>
 </html>
