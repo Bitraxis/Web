@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Windows 98 Style File Explorer</title>
+    <title>Windows 98 Style Blog</title>
     <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
     <style>
         body {
@@ -14,21 +14,21 @@
         .window {
             background: #c0c0c0;
             border: 2px solid #000;
-            width: 600px;
+            box-shadow: 4px 4px #808080;
+            width: 700px;
             margin: 40px auto;
-            box-shadow: 8px 8px 0 #000;
+            padding: 0;
         }
         .title-bar {
-            background: linear-gradient(90deg, #000080 80%, #1084d0 100%);
+            background: linear-gradient(to bottom, #000080 0%, #3a6ea5 100%);
             color: #fff;
             padding: 6px 10px;
-            font-size: 20px;
             font-weight: bold;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #000;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            font-size: 20px;
+            border-bottom: 2px solid #000;
         }
         .title-bar-buttons {
             display: flex;
@@ -39,137 +39,99 @@
             height: 16px;
             background: #c0c0c0;
             border: 1px solid #fff;
-            box-shadow: 1px 1px 0 #808080;
+            box-shadow: 1px 1px #808080;
+            margin-left: 2px;
             cursor: pointer;
         }
         .content {
             padding: 20px;
+            min-height: 200px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
+        .icons {
+            display: flex;
+            gap: 30px;
+            margin: 30px auto 0 auto;
+            justify-content: center;
         }
-        li {
-            margin: 8px 0;
-        }
-        a {
-            color: #000080;
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-decoration: none;
+            color: #000;
+            width: 70px;
+        }
+        .icon img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 6px;
+            border: 1px solid #000;
             background: #fff;
-            padding: 2px 8px;
-            border: 1px solid #808080;
-            border-radius: 2px;
-            box-shadow: 1px 1px 0 #fff;
-            transition: background 0.2s;
+            padding: 4px;
         }
-        a:hover {
-            background: #c0c0c0;
-            border-color: #000080;
+        .icon span {
+            font-size: 16px;
+            background: #fff;
+            border: 1px solid #000;
+            padding: 2px 4px;
+            margin-top: 2px;
+            box-shadow: 1px 1px #808080;
         }
-        .folder {
-            font-weight: bold;
-            margin-top: 16px;
-            color: #008000;
+        .blog-post {
+            background: #fff;
+            border: 1px solid #000;
+            margin-bottom: 12px;
+            padding: 10px;
+            box-shadow: 2px 2px #808080;
         }
-        .desktop-icon {
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        width: 64px;
-        text-align: center;
-        cursor: pointer;
-    }
-    .desktop-icon img {
-        width: 48px;
-        height: 48px;
-        image-rendering: pixelated;
-        margin-bottom: 4px;
-        border: 1px solid #fff;
-        box-shadow: 1px 1px 0 #808080;
-        background: #c0c0c0;
-        border-radius: 4px;
-    }
-    .desktop-icon span {
-        display: block;
-        font-size: 18px;
-        color: #fff;
-        text-shadow: 1px 1px 0 #000;
-        margin-top: 2px;
-        padding: 2px 0;
-    }
-    .desktop-icon:active img,
-    .desktop-icon:focus img {
-        border-color: #000080;
-        box-shadow: 1px 1px 0 #000;
-    }
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
     </style>
 </head>
 <body>
     <div class="window">
         <div class="title-bar">
-            <span>My Computer</span>
+            <span>My Windows 98 Blog</span>
             <div class="title-bar-buttons">
                 <div class="title-bar-button"></div>
                 <div class="title-bar-button"></div>
                 <div class="title-bar-button"></div>
             </div>
         </div>
-        <div class="content" id="explorer-content">
-            <p>Loading files...</p>
+        <div class="content">
+            <main>
+                <article class="blog-post">
+                    <strong>Welcome to My Blog</strong><br>
+                    This is a sample post. You can add more posts by editing the HTML file and duplicating the <code>&lt;article class="blog-post"&gt;...&lt;/article&gt;</code> block.
+                </article>
+                <article class="blog-post">
+                    <strong>Another Post</strong><br>
+                    Here is another example post. You can style and organize your posts however you like!
+                </article>
+                <!-- Add more <article class="blog-post">...</article> blocks as needed -->
+            </main>
         </div>
     </div>
-    <a class="desktop-icon" href="portfolio.html" title="Portfolio" tabindex="0">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Windows_98_folder_icon.png" alt="Portfolio Icon">
-        <span>Portfolio</span>
-    </a>
-    <script>
-        // Helper to fetch directory listing via fetch API (requires server-side support)
-        async function fetchDirectory(path = '.') {
-            // This assumes your server supports directory listing as JSON at /api/list?dir=...
-            // You need to implement this API or use a static site generator to pre-generate the file list.
-            const res = await fetch(`/api/list?dir=${encodeURIComponent(path)}`);
-            if (!res.ok) return [];
-            try {
-                return await res.json();
-            } catch (e) {
-                return [];
-            }
-        }
-
-        // Recursively render directories and html files
-        function renderFiles(files, basePath = '') {
-            let html = '<ul>';
-            files.forEach(file => {
-                if (file.type === 'directory') {
-                    html += `<li class="folder">${file.name}/</li>`;
-                    html += renderFiles(Array.isArray(file.children) ? file.children : (file.children ? [file.children] : []), basePath + file.name + '/');
-                } else if (file.type === 'file' && file.name.endsWith('.html')) {
-                    html += `<li><a href="${basePath + file.name}" target="_blank">${basePath + file.name}</a></li>`;
-                }
-            });
-            html += '</ul>';
-            return html;
-        }
-
-        // Main
-        (async function() {
-            const explorer = document.getElementById('explorer-content');
-            try {
-                let files = await fetchDirectory('.');
-                if (!Array.isArray(files) || files.length === 0) {
-                    // Fallback mock data if API is unavailable or returns empty
-                    files = [
-                        { type: 'directory', name: 'Documents', children: [
-                            { type: 'file', name: 'resume.html' }
-                        ]},
-                        { type: 'file', name: 'index.html' }
-                    ];
-                }
-                explorer.innerHTML = renderFiles(files);
-            } catch (e) {
-                explorer.innerHTML = '<p style="color:red;">Failed to load file list. Please set up the /api/list endpoint.</p>';
-            }
-        })();
-    </script>
+    <div class="icons">
+        <a class="icon" href="https://github.com/Bitraxis" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            <span>GitHub</span>
+        </a>
+        <a class="icon" href="Web Stránka/index.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Windows_Explorer.svg" alt="Portfolio">
+            <span>Portfolio</span>
+        </a>
+        <a class="icon" href="mailto:hyauzane@proton.me">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Microsoft_Mail_Icon.png" alt="Contact">
+            <span>Contact</span>
+        </a>
+        <a class="icon" href="https://twitter.com/Hacker0252" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter">
+            <span>Twitter</span>
+        </a>
+    </div>
 </body>
 </html>
