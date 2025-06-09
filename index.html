@@ -2,136 +2,268 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Windows 98 Style Blog</title>
-    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <title>Bitraxis's Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background: #008080;
-            font-family: 'VT323', monospace;
+            background: #008080 url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #fff;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
-        .window {
-            background: #c0c0c0;
-            border: 2px solid #000;
-            box-shadow: 4px 4px #808080;
-            width: 700px;
-            margin: 40px auto;
-            padding: 0;
+        .background-anim {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
         }
-        .title-bar {
-            background: linear-gradient(to bottom, #000080 0%, #3a6ea5 100%);
-            color: #fff;
-            padding: 6px 10px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 20px;
-            border-bottom: 2px solid #000;
+        .background-anim__star {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('https://www.animatedimages.org/data/media/280/animated-star-image-0066.gif') no-repeat center/contain;
+            opacity: 0.7;
+            animation: floatStar 12s linear infinite;
         }
-        .title-bar-buttons {
-            display: flex;
-            gap: 2px;
+        .background-anim__star--2 {
+            left: 80vw;
+            top: 60vh;
+            width: 40px;
+            height: 40px;
+            animation-delay: 4s;
+            animation-duration: 16s;
         }
-        .title-bar-button {
-            width: 16px;
-            height: 16px;
-            background: #c0c0c0;
-            border: 1px solid #fff;
-            box-shadow: 1px 1px #808080;
-            margin-left: 2px;
-            cursor: pointer;
+        .background-anim__star--3 {
+            left: 20vw;
+            top: 30vh;
+            width: 28px;
+            height: 28px;
+            animation-delay: 2s;
+            animation-duration: 10s;
         }
-        .content {
-            padding: 20px;
-            min-height: 200px;
+        @keyframes floatStar {
+            0% { transform: translateY(0) rotate(0deg);}
+            100% { transform: translateY(-100vh) rotate(360deg);}
         }
-        .icons {
-            display: flex;
-            gap: 30px;
-            margin: 30px auto 0 auto;
-            justify-content: center;
-        }
-        .icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #000;
-            width: 70px;
-        }
-        .icon img {
+        .background-anim__shape {
+            position: absolute;
             width: 48px;
             height: 48px;
-            margin-bottom: 6px;
-            border: 1px solid #000;
-            background: #fff;
-            padding: 4px;
+            opacity: 0.6;
+            background: url('https://www.animatedimages.org/data/media/280/animated-star-image-0005.gif') no-repeat center/contain;
+            animation: floatShape 14s linear infinite;
         }
-        .icon span {
-            font-size: 16px;
-            background: #fff;
-            border: 1px solid #000;
-            padding: 2px 4px;
-            margin-top: 2px;
-            box-shadow: 1px 1px #808080;
+        .background-anim__shape--2 {
+            left: 60vw;
+            top: 80vh;
+            width: 36px;
+            height: 36px;
+            animation-delay: 6s;
+            animation-duration: 18s;
         }
-        .blog-post {
-            background: #fff;
-            border: 1px solid #000;
-            margin-bottom: 12px;
-            padding: 10px;
-            box-shadow: 2px 2px #808080;
+        .background-anim__shape--3 {
+            left: 10vw;
+            top: 50vh;
+            width: 40px;
+            height: 40px;
+            animation-delay: 3s;
+            animation-duration: 12s;
         }
-        main {
+        @keyframes floatShape {
+            0% { transform: translateY(0) rotate(0deg);}
+            100% { transform: translateY(-110vh) rotate(-360deg);}
+        }
+        .desktop {
+            min-height: 100vh;
+            padding-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .desktop__icons {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 30px;
+            position: absolute;
+            top: 40px;
+            left: 30px;
+            z-index: 2;
+        }
+        .desktop__icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        .desktop__icon-img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 5px;
+            background: #fff;
+            border-radius: 8px;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #333;
+            object-fit: contain;
+        }
+        .desktop__icon-label {
+            font-size: 14px;
+            text-shadow: 1px 1px 0 #000;
+            margin-top: 2px;
+        }
+        .taskbar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 48px;
+            background: linear-gradient(90deg, #000080 0%, #008080 100%);
+            border-top: 3px solid #fff;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 -2px 8px #0008;
+        }
+        .taskbar__start {
+            background: #c0c0c0;
+            color: #000;
+            font-weight: bold;
+            border: 2px outset #fff;
+            border-radius: 4px;
+            padding: 6px 18px 6px 28px;
+            margin: 0 12px;
+            font-size: 18px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Logo_%281992-2001%29.svg');
+            background-size: 18px 18px;
+            background-repeat: no-repeat;
+            background-position: 6px center;
+            box-shadow: 1px 1px 0 #888;
+            cursor: pointer;
+        }
+        .taskbar__clock {
+            margin-left: auto;
+            margin-right: 18px;
+            font-family: monospace;
+            font-size: 18px;
+            background: #2228;
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid #fff4;
+            text-shadow: 1px 1px 0 #000;
+        }
+        .main {
+            margin: 0 auto;
+            max-width: 700px;
+            padding: 80px 20px 60px 120px;
+        }
+        .blog {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .blog__article {
+            background: #fff8;
+            border: 2px solid #fff;
+            border-radius: 12px;
+            box-shadow: 4px 4px 0 #0006;
+            padding: 24px 28px;
+            color: #222;
+            font-size: 1.1em;
+            position: relative;
+        }
+        .blog__article-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #000080;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 0 #fff;
+        }
+        .blog__article-date {
+            font-size: 0.9em;
+            color: #008080;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        @media (max-width: 600px) {
+            .main {
+                padding: 80px 8px 60px 8px;
+            }
+            .desktop__icons {
+                position: static;
+                flex-direction: row;
+                gap: 18px;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="window">
-        <div class="title-bar">
-            <span>My Windows 98 Blog</span>
-            <div class="title-bar-buttons">
-                <div class="title-bar-button"></div>
-                <div class="title-bar-button"></div>
-                <div class="title-bar-button"></div>
-            </div>
+    <div class="background-anim" aria-hidden="true">
+        <div class="background-anim__star" style="left:10vw;top:90vh;"></div>
+        <div class="background-anim__star background-anim__star--2"></div>
+        <div class="background-anim__star background-anim__star--3"></div>
+        <div class="background-anim__shape" style="left:40vw;top:95vh;"></div>
+        <div class="background-anim__shape background-anim__shape--2"></div>
+        <div class="background-anim__shape background-anim__shape--3"></div>
+    </div>
+    <div class="desktop">
+        <div class="desktop__icons">
+            <a class="desktop__icon" href="https://github.com/Bitraxis" target="_blank">
+                <img class="desktop__icon-img" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                <span class="desktop__icon-label">GitHub</span>
+            </a>
+            <a class="desktop__icon" href="./Web Stránka/index.html" target="_blank">
+                <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Windows_Explorer.svg" alt="Portfolio">
+                <span class="desktop__icon-label">Portfolio</span>
+            </a>
+            <a class="desktop__icon" href="mailto:hyuazane@proton.me" target="_blank">
+                <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/0/01/Microsoft_Mail_Icon.png" alt="Mail">
+                <span class="desktop__icon-label">Mail</span>
+            </a>
         </div>
-        <div class="content">
-            <main>
-                <article class="blog-post">
-                    <strong>Welcome to My Blog</strong><br>
-                    This is a sample post. You can add more posts by editing the HTML file and duplicating the <code>&lt;article class="blog-post"&gt;...&lt;/article&gt;</code> block.
+        <main class="main">
+            <section class="blog">
+                <article class="blog__article">
+                    <h2 class="blog__article-title">Welcome Site</h2>
+                    <div class="blog__article-date">June 2025</div>
+                    <p>
+                        Yo! This is my random ideas website if you want <strong>serious enquiries</strong> click the portfolio icon on the desktop.
+                    </p>
+
                 </article>
-                <article class="blog-post">
-                    <strong>Another Post</strong><br>
-                    Here is another example post. You can style and organize your posts however you like!
+                <article class="blog__article">
+                    <h2 class="blog__article-title">I started learning assembly</h2>
+                    <div class="blog__article-date">July 2016</div>
+                    <p>
+                        Brainf*ck is no longer my friend. So I started to learn assembly.      
+                    </p>
+                    <img src="9wq3rt.jpg">
                 </article>
-                <!-- Add more <article class="blog-post">...</article> blocks as needed -->
-            </main>
+            </section>
+        </main>
+        <div class="taskbar">
+            <button class="taskbar__start">Start</button>
+            <div class="taskbar__clock" id="taskbarClock"></div>
         </div>
     </div>
-    <div class="icons">
-        <a class="icon" href="https://github.com/Bitraxis" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-            <span>GitHub</span>
-        </a>
-        <a class="icon" href="Web Stránka/index.html">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Windows_Explorer.svg" alt="Portfolio">
-            <span>Portfolio</span>
-        </a>
-        <a class="icon" href="mailto:hyauzane@proton.me">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Microsoft_Mail_Icon.png" alt="Contact">
-            <span>Contact</span>
-        </a>
-        <a class="icon" href="https://twitter.com/Hacker0252" target="_blank">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="Twitter">
-            <span>Twitter</span>
-        </a>
-    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            if (h < 10) h = '0' + h;
+            if (m < 10) m = '0' + m;
+            document.getElementById('taskbarClock').textContent = h + ':' + m;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
