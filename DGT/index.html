@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGT</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.13.0/brython.min.js">
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/brython@3.13.0/brython_stdlib.js">
+    </script>
+</head>
+<body>
+    <div id="container">
+        <p>Ahoj!</p>
+        <button id="cervene">Zmeň farbu</button>
+    </div>
+    <script type="text/python">
+        from browser import document
+        
+        def zmen_farbu(event):
+            document["container"].style = {"color:"red", "background-color: red"}
+    </script>
+</body>
+</html>
