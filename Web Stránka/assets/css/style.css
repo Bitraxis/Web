@@ -861,16 +861,17 @@ h2 {
         border-radius: 2.5rem;
         border: 1px solid var(--white);
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 28rem;
+        width: 22rem;
         max-width: 90vw;
-        height: 3.5rem;
-        margin: 2rem auto 0 auto; /* Top margin separates it from tiles, auto centers it */
-        padding: 0 1rem;
-        position: static; /* Ensure it follows normal document flow */
-        z-index: auto;
+        height: auto;
+        min-height: 5.5rem;
+        margin: 2.5rem auto 0 auto;
+        padding: 1.2rem 1.2rem 1rem 1.2rem;
+        box-sizing: border-box;
+        gap: 0.75rem;
     }
     .zivotopis__image {
         background-color: var(--pastel-grey);
@@ -882,7 +883,7 @@ h2 {
         align-items: center;
         flex-shrink: 0;
         border: 1px solid var(--black);
-        margin-right: 1rem;
+        margin: 0 auto;
     }
     .zivotopis__a {
         color: var(--pastel-grey);
@@ -893,12 +894,14 @@ h2 {
         font-weight: 400;
         line-height: normal;
         text-decoration: none;
-        width: auto;
-        height: 3.125rem;
+        width: 100%;
+        height: auto;
         display: flex;
         align-items: center;
-        flex-shrink: 0;
+        justify-content: center;
         margin-bottom: 0;
+        margin-top: 0.2rem;
+        padding: 0;
     }
     /* Footer always at the bottom, below zivotopis */
     .footer {
