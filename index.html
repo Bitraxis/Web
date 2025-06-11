@@ -162,6 +162,7 @@
             margin: 0 auto;
             max-width: 700px;
             padding: 80px 20px 60px 120px;
+            display: none; /* Hide original blog/main */
         }
         .blog {
             display: flex;
@@ -274,6 +275,22 @@
         .win98-window[dragging] {
             opacity: 0.85;
         }
+        /* Modal stacking for blog window */
+        .win98-window.blog-window {
+            z-index: 1002;
+            top: 160px;
+        }
+        .win98-window.blog-window {
+            z-index: 1002;
+            top: 160px;
+            /* Make it draggable and resizable (optional min/max sizes) */
+            resize: both;
+            overflow: hidden; /* Prevent window from overflowing on resize */
+        }
+        .win98-window.blog-window .win98-content {
+            max-height: 60vh;
+            overflow-y: auto; /* Scrollable blog content */
+        }
     </style>
 </head>
 <body>
@@ -303,8 +320,14 @@
                 <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
                 <span class="desktop__icon-label">Instagram</span>
             </a>
+            <!-- Blog Icon -->
+            <button class="desktop__icon" id="blogIcon" style="background:none;border:none;padding:0;">
+                <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Microsoft-Word-Logo-1995-1995.png" alt="Blog">
+                <span class="desktop__icon-label">Blog</span>
+            </button>
         </div>
-        <main class="main">
+        <!-- main blog (now hidden) -->
+        <main class="main" id="mainBlog">
             <section class="blog">
                 <article class="blog__article">
                     <h2 class="blog__article-title">Welcome to the Site</h2>
@@ -327,7 +350,7 @@
             <button class="taskbar__start" id="startBtn">Start</button>
             <div class="taskbar__clock" id="taskbarClock"></div>
         </div>
-        <!-- Windows 98 Style Popup Window -->
+        <!-- Windows 98 Style Popup Window: About Me -->
         <div class="win98-window" id="win98Window" tabindex="-1" aria-modal="true" aria-label="Start Menu Window">
             <div class="win98-titlebar" id="win98Titlebar">
                 <span class="win98-title">About Me</span>
@@ -336,12 +359,38 @@
             <div class="win98-content">
                 <h1>About Me</h1>
                 <p>
-                    <strong>My name is Dominik Nagy</strong> and I am a <i><strong>programmer</strong></i> and a <i>musician</i> from Slovakia. I am currently studying at the vocational school in Prievidza, in the filed of multimedia. For very definitely serious enquiries, reach out from the portfolio site where you can see some of my work (I know it looks horrendous but that is what happens when you rush).
+                    <strong>My name is Dominik Nagy</strong> and I am a <i><strong>programmer</strong></i> and a <i>musician</i> from Slovakia. I am currently studying at the vocational school in Prie[...]
                 </p>
                 <h2>Working on:</h2>
                 <p> I am currently still even after years my Java based programming language (still not hosted on github or anywhere), I want to push it out when I finish it.</p>
                 <h3>Also my interest:</h3>
                 <p>I go on some hackathons, I am also writing some stuff. (Book)</p>
+            </div>
+        </div>
+        <!-- Windows 98 Style Popup Window: Blog -->
+        <div class="win98-window blog-window" id="win98BlogWindow" tabindex="-1" aria-modal="true" aria-label="Blog Window">
+            <div class="win98-titlebar" id="win98BlogTitlebar">
+                <span class="win98-title">Blog</span>
+                <button class="win98-close" id="win98BlogCloseBtn" title="Close">&times;</button>
+            </div>
+            <div class="win98-content">
+                <section class="blog">
+                    <article class="blog__article">
+                        <h2 class="blog__article-title">Welcome to the Site</h2>
+                        <div class="blog__article-date">June 2025</div>
+                        <p>
+                            <i>Yo!</i> This is my random ideas website if you want <strong>serious enquiries</strong> click the portfolio icon on the desktop.
+                        </p>
+                    </article>
+                    <article class="blog__article">
+                        <h2 class="blog__article-title">I started learning assembly</h2>
+                        <div class="blog__article-date">July 2016</div>
+                        <p>
+                            Brainf*ck is no longer my friend. So I started to learn assembly.      
+                        </p>
+                        <img class="brainfuck" src="9wq3rt.jpg">
+                    </article>
+                </section>
             </div>
         </div>
     </div>
@@ -376,6 +425,67 @@
                 }
             });
         }
+
+        // Blog icon opens Win98 Blog window
+        const blogIcon = document.getElementById('blogIcon');
+        const win98BlogWindow = document.getElementById('win98BlogWindow');
+        const win98BlogCloseBtn = document.getElementById('win98BlogCloseBtn');
+        if (blogIcon && win98BlogWindow && win98BlogCloseBtn) {
+            blogIcon.addEventListener('click', () => {
+                win98BlogWindow.classList.add('active');
+                win98BlogWindow.focus();
+            });
+            win98BlogCloseBtn.addEventListener('click', () => {
+                win98BlogWindow.classList.remove('active');
+            });
+            // Dismiss window with Escape
+            win98BlogWindow.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    win98BlogWindow.classList.remove('active');
+                }
+            });
+        }
+        (function() {
+        const blogWindow = document.getElementById('win98BlogWindow');
+        const titlebar = document.getElementById('win98BlogTitlebar');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        if (blogWindow && titlebar) {
+            titlebar.addEventListener('mousedown', function(e) {
+                // Only left click
+                if (e.button !== 0) return;
+                isDragging = true;
+                blogWindow.setAttribute('dragging', 'true');
+                // Get mouse position in window
+                const rect = blogWindow.getBoundingClientRect();
+                offsetX = e.clientX - rect.left;
+                offsetY = e.clientY - rect.top;
+                document.body.style.userSelect = 'none';
+            });
+
+            document.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                // Keep window within viewport
+                let left = e.clientX - offsetX;
+                let top = e.clientY - offsetY;
+                // Prevent dragging outside the window
+                left = Math.max(0, Math.min(window.innerWidth - blogWindow.offsetWidth, left));
+                top = Math.max(0, Math.min(window.innerHeight - blogWindow.offsetHeight, top));
+                blogWindow.style.left = left + 'px';
+                blogWindow.style.top = top + 'px';
+                blogWindow.style.transform = ''; // Remove center transform
+            });
+
+            document.addEventListener('mouseup', function(e) {
+                if (isDragging) {
+                    isDragging = false;
+                    blogWindow.removeAttribute('dragging');
+                    document.body.style.userSelect = '';
+                }
+            });
+        }
+    })();
     </script>
 </body>
 </html>
