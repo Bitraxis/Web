@@ -451,40 +451,7 @@
         let isDragging = false;
         let offsetX, offsetY;
 
-        if (blogWindow && titlebar) {
-            titlebar.addEventListener('mousedown', function(e) {
-                // Only left click
-                if (e.button !== 0) return;
-                isDragging = true;
-                blogWindow.setAttribute('dragging', 'true');
-                // Get mouse position in window
-                const rect = blogWindow.getBoundingClientRect();
-                offsetX = e.clientX - rect.left;
-                offsetY = e.clientY - rect.top;
-                document.body.style.userSelect = 'none';
-            });
-
-            document.addEventListener('mousemove', function(e) {
-                if (!isDragging) return;
-                // Keep window within viewport
-                let left = e.clientX - offsetX;
-                let top = e.clientY - offsetY;
-                // Prevent dragging outside the window
-                left = Math.max(0, Math.min(window.innerWidth - blogWindow.offsetWidth, left));
-                top = Math.max(0, Math.min(window.innerHeight - blogWindow.offsetHeight, top));
-                blogWindow.style.left = left + 'px';
-                blogWindow.style.top = top + 'px';
-                blogWindow.style.transform = ''; // Remove center transform
-            });
-
-            document.addEventListener('mouseup', function(e) {
-                if (isDragging) {
-                    isDragging = false;
-                    blogWindow.removeAttribute('dragging');
-                    document.body.style.userSelect = '';
-                }
-            });
-        }
+        
     })();
     </script>
 </body>
