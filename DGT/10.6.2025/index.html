@@ -32,12 +32,16 @@
             border: 1px solid #ccc;
         }
         
+        #cas {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <p>Ahoj!</p>
         <button id="cervene">Zmeň farbu a velkosť</button>
+        <p id="cas">Test</p>
     </div>
     <!--Brython-->
     <script type="text/python">
@@ -52,9 +56,12 @@
             global farba
             if farba == "red":
                 document["container"].style = {"color": "red", "font-size": "50px"}
+                document["cas"].style.display = "block"
                 farba = "black"
             else:
                 document["container"].style = {"color": "black", "font-size": "20px"}
+                document["cas"].style.display = "none"
+                document["cas"].text = ""
                 farba = "red"
         document["cervene"].bind("click", zmen_farbu)
 
