@@ -21,7 +21,17 @@
         from browser import document
         
         def zmen_farbu(event):
-            document["container"].style = {"color:"red", "background-color: red"}
+            global farba
+            farba = "red"
+            if farba == "red":
+                document["container"].style = {"color": "red", "font-size": "50px"}
+                farba = "black"
+            else:
+                document["container"].style = {"color": "black", "font-size": "20px"}
+                farba = "red"
+        document["cervene"].bind("click", zmen_farbu)
+
+        
     </script>
 </body>
 </html>
