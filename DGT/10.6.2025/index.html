@@ -20,9 +20,10 @@
     <script type="text/python">
         from browser import document
         
+        farba = "red"
+
         def zmen_farbu(event):
             global farba
-            farba = "red"
             if farba == "red":
                 document["container"].style = {"color": "red", "font-size": "50px"}
                 farba = "black"
