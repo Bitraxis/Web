@@ -10,11 +10,34 @@
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/brython@3.13.0/brython_stdlib.js">
     </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        body {
+            font-family: 'Space Mono', monospace;
+            text-align: center;
+            margin-top: 0 0 0 0;
+        }
+        #container {
+            transition: color 0.5s, font-size 0.5s;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 0 0 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b4b4b4;
+            border: 1px solid #ccc;
+        }
+        
+    </style>
 </head>
 <body>
     <div id="container">
         <p>Ahoj!</p>
-        <button id="cervene">Zmeň farbu</button>
+        <button id="cervene">Zmeň farbu a velkosť</button>
     </div>
     <!--Brython-->
     <script type="text/python">
