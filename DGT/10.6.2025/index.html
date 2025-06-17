@@ -19,7 +19,7 @@
             margin-top: 0 0 0 0;
         }
         #container {
-            transition: color 0.5s, font-size 0.5s;
+            transition: color 0.5s, font-size 0.5s, background-color 0.5s, border 0.5s, padding 0.5s, margin 0.5s, box-shadow 0.5s, border-radius 0.5s, width 0.5s, height 0.5s, opacity 0.5s, transform 0.5s, filter 0.5s, overflow 0.5s, display 0.5s, visibility 0.5s, position 0.5s, z-index 0.5s, flex 0.5s, grid 0.5s, align-items 0.5s, justify-content 0.5s, text-align 0.5s, line-height 0.5s, letter-spacing 0.5s; 
         }
         button {
             padding: 10px 20px;
@@ -33,39 +33,44 @@
             border: 1px solid #ccc;
         }
         
-        #cas {
-            display: none;
-        }
     </style>
 </head>
 <body>
     <div id="container">
         <p>Ahoj!</p>
-        <p id="cas">Test</p>
         <button id="cervene">Zmeň farbu a velkosť</button>
-        
+        <button id="clicks">Ťuk</button>
+        <p id="click">0</p>
     </div>
     <!--Brython-->
     <script type="text/python">
         import time
         import math
         from browser import document
-        import browser.timer
+        from browser import timer
         
+        click = 0
         farba = "red"
 
         def zmen_farbu(event):
             global farba
             if farba == "red":
                 document["container"].style = {"color": "red", "font-size": "50px"}
-                document["cas"].style.display = "block"
                 farba = "black"
             else:
                 document["container"].style = {"color": "black", "font-size": "20px"}
-                document["cas"].style.display = "none"
                 farba = "red"
-        document["cervene"].bind("click", zmen_farbu)
 
+        def pridajClick(event):
+            global click
+            click += 1
+            print(click)
+            document["click"].textContent = str(click)
+        
+        
+        document["cervene"].bind("click", zmen_farbu)
+        document["clicks"].bind("click", pridajClick)
+        
         
     </script>
 </body>
