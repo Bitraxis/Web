@@ -1,0 +1,34 @@
+img {
+    border-radius: 1px solid #222;
+    border-radius: 4px;
+    padding: 5px;
+    width: 155px;
+    margin-left: 40vw;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+header {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.header__h1 {
+    margin-left: 38.5vw;
+    font-family: Linux Libertine, Hoefler Text, Georgia, Times New Roman, Times, serif;
+}
+
+main {
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.main__p {
+    margin-left: 45%;
+}
+
+.main__input {
+    margin-left: 40%;
+}
