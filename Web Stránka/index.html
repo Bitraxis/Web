@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/images/favicon.png">
-    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
@@ -19,8 +18,30 @@
         <header class="header">
             <p class="header__p space-mono-regular">dominiknagy</p>
             <img class="header__image--language" src="assets/images/54616_25527.png">
-            <img class="header__image--dropdown" src="assets/images/54616_25429.png">
-            <img class="header__image--menu" src="assets/images/4049_13563.png">
+            <img class="header__image--dropdown" src="assets/images/54616_25429.png" id="lang-switch" style="cursor:pointer;" title="Switch language">
+            <script>
+                document.getElementById('lang-switch').addEventListener('click', function() {
+                    const html = document.documentElement;
+                    if (html.lang === 'sk') {
+                        html.lang = 'en';
+                        // Switch to English
+                        document.querySelector('.header__p').textContent = 'dominiknagy';
+                        document.querySelector('.main__h1').textContent = 'Dominik Nagy';
+                        document.querySelector('.main__h2').textContent = 'Is a professional fool';
+                        document.querySelector('.portfolio__h1').textContent = 'Portfolio';
+                        document.querySelector('.zivotopis__a').textContent = 'Download my resume.';
+                    } else {
+                        html.lang = 'sk';
+                        // Switch to Slovak
+                        document.querySelector('.header__p').textContent = 'dominiknagy';
+                        document.querySelector('.main__h1').textContent = 'Dominik Nagy';
+                        document.querySelector('.main__h2').textContent = 'Je profesionálny hlupák';
+                        document.querySelector('.portfolio__h1').textContent = 'Portfólio';
+                        document.querySelector('.zivotopis__a').textContent = 'Stiahni si môj životopis.';
+                    }
+                });
+            </script>
+            <a href="./assets/html/kontakt.html"><img class="header__image--menu" src="assets/images/4049_13563.png"></a>
         </header>
 
         <!-- Druhy container -->
@@ -28,7 +49,7 @@
 
             <!-- Hlavný obsah -->
             <main class="main">
-                <image class="main__pic" src="assets/images/headshot.jpg">
+                <img class="main__pic" src="assets/images/Scanned Document.png" alt="Headshot">
                 <h1 class="main__h1 frank-ruhl-libre-regular">Dominik Nagy</h1>
                 <h2 class="main__h2 frank-ruhl-libre-regular">Je profesionálny hlupák</h2>
             </main>
@@ -41,46 +62,50 @@
                 <div class="tiles" id="tiles">
 
                     <!-- Prvý riadok -->
-                    <div class="tiles__top-left">
+                    <div class="tiles__top-left"> 
+                        
                     </div>
 
                     <div class="tiles__top-right-1">
-                        <image class="tiles__top-right-1--image" src="assets/images/Adobe.png">
+                        <img class="tiles__top-right-1--image" src="assets/images/Adobe.png" alt="Adobe">
                     </div>
 
                     <div class="tiles__top-right-2">
-                        <image class="tiles__top-right-2--image" src="assets/images/Python.png">
+                        <img class="tiles__top-right-2--image" src="assets/images/Python.png" alt="Python">
                     </div>
 
                     <!-- Druhý riadok -->
                     <div class="tiles__bottom-left-1">
-                        <image class="tiles__bottom-left-1--image" src="assets/images/Code.png">
+                        <img class="tiles__bottom-left-1--image" src="assets/images/Code.png" alt="Code">
                     </div>
 
                     <div class="tiles__bottom-left-2">
-                        <image class="tiles__bottom-left-2--image" src="assets/images/Audacity.png">
+                        <img class="tiles__bottom-left-2--image" src="assets/images/Audacity.png" alt="Audacity">
                     </div>
 
                     <div class="tiles__bottom-right">
+                        
                     </div>
+                    <!--jhahsdus-->
 
                     <!-- Tretí riadok -->
                     <div class="tiles__bottom-left">
+                        
                     </div>
 
                     <div class="tiles__bottom-right-1">
-                        <image class="tiles__bottom-right-1--image" src="assets/images/Foto.png">
+                        <img class="tiles__bottom-right-1--image" src="assets/images/Foto.png" alt="Foto">
                     </div>
 
                     <div class="tiles__bottom-right-2">
-                        <image class="tiles__bottom-right-2--image" src="assets/images/Videa.png">
+                        <img class="tiles__bottom-right-2--image" src="assets/images/Videa.png" alt="Videa">
                     </div>
 
                 </div>
 
                 <!-- Zivotopis -->
                 <div class="zivotopis">
-                    <image class="zivotopis__image" src="assets/images/Stiahnutie.png">
+                    <img class="zivotopis__image" src="assets/images/Stiahnutie.png" alt="Stiahnutie">
                     <a class="zivotopis__a frank-ruhl-libre-regular" href="./index.html">Stiahni si môj životopis.</a>
                 </div>
 
@@ -88,12 +113,12 @@
 
             <!-- Footer -->
             <footer class="footer">
-                <image class="footer__image--top-left" src="assets/images/Mail.png">
+                <a class="footer__image--top-left" href="mailto:hyauzane@proton.me"><img src="assets/images/Mail.png" alt="Mail"></a>
                 <p class="footer__p--1 space-mono-regular">Dominik Nagy©</p>
-                <image class="footer__image--top-right" src="assets/images/Github.png">
-                <image class="footer__image--bottom-left" src="assets/images/Instagram.png">
+                <a class="footer__image--top-right" href="https://github.com/Bitraxis"><img src="assets/images/Github.png" alt="Github"></a>
+                <a class="footer__image--bottom-left" href="https://www.instagram.com/hyauzane/"><img src="assets/images/Instagram.png" alt="Instagram"></a>
                 <p class="footer__p--2 space-mono-regular">Cookies</p>
-                <image class="footer__image--bottom-right" src="assets/images/Telefon.png">
+                <a class="footer__image--bottom-right" href="tel:+421950812004"><img src="assets/images/Telefon.png" alt="Telefon"></a>
             </footer>
 
         </div>

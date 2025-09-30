@@ -2,12 +2,457 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Bitraxis's Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nagy Web</title>
+    <style>
+        body {
+            background: #008080 url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .background-anim {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .background-anim__star {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: url('https://www.animatedimages.org/data/media/280/animated-star-image-0066.gif') no-repeat center/contain;
+            opacity: 0.7;
+            animation: floatStar 12s linear infinite;
+        }
+        .background-anim__star--2 {
+            left: 80vw;
+            top: 60vh;
+            width: 40px;
+            height: 40px;
+            animation-delay: 4s;
+            animation-duration: 16s;
+        }
+        .background-anim__star--3 {
+            left: 20vw;
+            top: 30vh;
+            width: 28px;
+            height: 28px;
+            animation-delay: 2s;
+            animation-duration: 10s;
+        }
+        @keyframes floatStar {
+            0% { transform: translateY(0) rotate(0deg);}
+            100% { transform: translateY(-100vh) rotate(360deg);}
+        }
+        .background-anim__shape {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            opacity: 0.6;
+            background: url('https://www.animatedimages.org/data/media/280/animated-star-image-0005.gif') no-repeat center/contain;
+            animation: floatShape 14s linear infinite;
+        }
+        .background-anim__shape--2 {
+            left: 60vw;
+            top: 80vh;
+            width: 36px;
+            height: 36px;
+            animation-delay: 6s;
+            animation-duration: 18s;
+        }
+        .background-anim__shape--3 {
+            left: 10vw;
+            top: 50vh;
+            width: 40px;
+            height: 40px;
+            animation-delay: 3s;
+            animation-duration: 12s;
+        }
+        @keyframes floatShape {
+            0% { transform: translateY(0) rotate(0deg);}
+            100% { transform: translateY(-110vh) rotate(-360deg);}
+        }
+        .desktop {
+            min-height: 100vh;
+            padding-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .desktop__icons {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: absolute;
+            top: 40px;
+            left: 30px;
+            z-index: 2;
+        }
+        .desktop__icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        .desktop__icon-img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 5px;
+            background: #fff;
+            border-radius: 8px;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0 #333;
+            object-fit: contain;
+        }
+        .desktop__icon-label {
+            font-size: 14px;
+            text-shadow: 1px 1px 0 #000;
+            margin-top: 2px;
+        }
+        .taskbar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 48px;
+            background: linear-gradient(90deg, #000080 0%, #008080 100%);
+            border-top: 3px solid #fff;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 -2px 8px #0008;
+        }
+        .taskbar__start {
+            background: #c0c0c0;
+            color: #000;
+            font-weight: bold;
+            border: 2px outset #fff;
+            border-radius: 4px;
+            padding: 6px 18px 6px 28px;
+            margin: 0 12px;
+            font-size: 18px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Logo_%281992-2001%29.svg');
+            background-size: 18px 18px;
+            background-repeat: no-repeat;
+            background-position: 6px center;
+            box-shadow: 1px 1px 0 #888;
+            cursor: pointer;
+        }
+        .taskbar__clock {
+            margin-left: auto;
+            margin-right: 18px;
+            font-family: monospace;
+            font-size: 18px;
+            background: #2228;
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid #fff4;
+            text-shadow: 1px 1px 0 #000;
+        }
+        .main {
+            margin: 0 auto;
+            max-width: 700px;
+            padding: 80px 20px 60px 120px;
+            display: none; /* Hide original blog/main */
+        }
+        .blog {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .blog__article {
+            background-color: rgba(165, 165, 165, 0.315);
+            border: 2px solid #312d2d;
+            border-radius: 12px;
+            box-shadow: 4px 4px 0 #0006;
+            padding: 24px 28px;
+            color: #222;
+            font-size: 1.1em;
+            position: relative;
+        }
+        .blog__article-title {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #000080;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 0 #fff;
+        }
+        .blog__article-date {
+            font-size: 0.9em;
+            color: #008080;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        @media (max-width: 600px) {
+            .main {
+                padding: 80px 8px 60px 8px;
+            }
+            .desktop__icons {
+                position: static;
+                flex-direction: row;
+                gap: 18px;
+                margin-bottom: 20px;
+            }
+        }
+        .brainfuck {
+            width: 100%;
+            height: 100%;
+        }
+        /* Windows 98 style window */
+        .win98-window {
+            position: fixed;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 340px;
+            max-width: 96vw;
+            min-height: 180px;
+            background: #c0c0c0;
+            border: 3px solid #000;
+            border-radius: 7px;
+            box-shadow: 8px 8px 0 #2228;
+            z-index: 1001;
+            display: none;
+            font-family: 'MS Sans Serif', Tahoma, Geneva, Verdana, sans-serif;
+            color: #000;
+        }
+        .win98-window.active {
+            display: block;
+        }
+        .win98-titlebar {
+            background: linear-gradient(90deg,#000080 0%,#1084d0 100%);
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            cursor: move;
+        }
+        .win98-titlebar .win98-title {
+            letter-spacing: 1px;
+        }
+        .win98-close {
+            background: #c0c0c0;
+            color: #000;
+            border: 2px outset #fff;
+            width: 26px;
+            height: 26px;
+            margin-left: 12px;
+            font-size: 1.3em;
+            font-family: monospace;
+            border-radius: 4px;
+            cursor: pointer;
+            line-height: 22px;
+            text-align: center;
+            box-shadow: 1px 1px 0 #888;
+            transition: background 0.15s;
+        }
+        .win98-close:hover {
+            background: #e00;
+            color: #fff;
+        }
+        .win98-content {
+            padding: 18px 18px 24px 18px;
+            background: #fff;
+            border-radius: 0 0 4px 4px;
+            min-height: 80px;
+            font-size: 1em;
+        }
+        /* Optional: Make window draggable (no external JS) */
+        .win98-window[dragging] {
+            opacity: 0.85;
+        }
+        /* Modal stacking for blog window */
+        .win98-window.blog-window {
+            z-index: 1002;
+            top: 160px;
+        }
+        .win98-window.blog-window {
+            z-index: 1002;
+            top: 160px;
+            /* Make it draggable and resizable (optional min/max sizes) */
+            resize: both;
+            overflow: hidden; /* Prevent window from overflowing on resize */
+        }
+        .win98-window.blog-window .win98-content {
+            max-height: 60vh;
+            overflow-y: auto; /* Scrollable blog content */
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the site! It is under construction</h1>
-    <p><a href="sk-ka-Bitraxis/sk-ka-Bitraxis/index.html">sk-ka example</a></p>
-    <p><a href="./Web Stránka/index.html">Test Stranka</a></p>
+    <div class="background-anim" aria-hidden="true">
+        <div class="background-anim__star" style="left:10vw;top:90vh;"></div>
+        <div class="background-anim__star background-anim__star--2"></div>
+        <div class="background-anim__star background-anim__star--3"></div>
+        <div class="background-anim__shape" style="left:40vw;top:95vh;"></div>
+        <div class="background-anim__shape background-anim__shape--2"></div>
+        <div class="background-anim__shape background-anim__shape--3"></div>
+    </div>
+    <div class="desktop">
+        <div class="desktop__icons">
+            <a class="desktop__icon" href="https://github.com/Bitraxis" target="_blank">
+                <img class="desktop__icon-img" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                <span class="desktop__icon-label">GitHub</span>
+            </a>
+            <a class="desktop__icon" href="./Web Stránka/index.html" target="_blank">
+                <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Windows_Explorer.svg" alt="Portfolio">
+                <span class="desktop__icon-label">Portfolio</span>
+            </a>
+            <a class="desktop__icon" href="mailto:hyuazane@proton.me" target="_blank">
+                <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/0/01/Microsoft_Mail_Icon.png" alt="Mail">
+                <span class="desktop__icon-label">Mail</span>
+            </a>
+            <a class="desktop__icon" href="https://www.instagram.com/hyauzane/" target="_blank">
+                <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+                <span class="desktop__icon-label">Instagram</span>
+            </a>
+            <!-- Blog Icon -->
+            <button class="desktop__icon" id="blogIcon" style="background:none;border:none;padding:0;">
+                <img class="desktop__icon-img" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Microsoft-Word-Logo-1995-1995.png" alt="Blog">
+                <span class="desktop__icon-label">Blog</span>
+            </button>
+        </div>
+        <!-- main blog (now hidden) -->
+        <main class="main" id="mainBlog">
+            <section class="blog">
+                <article class="blog__article">
+                    <h2 class="blog__article-title">Welcome to the Site</h2>
+                    <div class="blog__article-date">June 2025</div>
+                    <p>
+                        <i>Yo!</i> This is my random ideas website if you want <strong>serious enquiries</strong> click the portfolio icon on the desktop.
+                    </p>
+                </article>
+                <article class="blog__article">
+                    <h2 class="blog__article-title">I started learning assembly</h2>
+                    <div class="blog__article-date">July 2016</div>
+                    <p>
+                        Brainf*ck is no longer my friend. So I started to learn assembly.      
+                    </p>
+                    <img class="brainfuck" src="9wq3rt.jpg">
+                </article>
+            </section>
+        </main>
+        <div class="taskbar">
+            <button class="taskbar__start" id="startBtn">Start</button>
+            <div class="taskbar__clock" id="taskbarClock"></div>
+        </div>
+        <!-- Windows 98 Style Popup Window: About Me -->
+        <div class="win98-window" id="win98Window" tabindex="-1" aria-modal="true" aria-label="Start Menu Window">
+            <div class="win98-titlebar" id="win98Titlebar">
+                <span class="win98-title">About Me</span>
+                <button class="win98-close" id="win98CloseBtn" title="Close">&times;</button>
+            </div>
+            <div class="win98-content">
+                <h1>About Me</h1>
+                <p>
+                    <strong>My name is Dominik Nagy</strong> and I am a <i><strong>programmer</strong></i> and a <i>musician</i> from Slovakia. I am currently studying at a vocational school in Prievidza.
+                </p>
+                <h2>Working on:</h2>
+                <p> I am currently still even after years my Java based programming language (still not hosted on github or anywhere), I want to push it out when I finish it.</p>
+                <h3>Also my interest:</h3>
+                <p>I go on some hackathons, I am also writing some stuff. (Book)</p>
+            </div>
+        </div>
+        <!-- Windows 98 Style Popup Window: Blog -->
+        <div class="win98-window blog-window" id="win98BlogWindow" tabindex="-1" aria-modal="true" aria-label="Blog Window">
+            <div class="win98-titlebar" id="win98BlogTitlebar">
+                <span class="win98-title">Blog</span>
+                <button class="win98-close" id="win98BlogCloseBtn" title="Close">&times;</button>
+            </div>
+            <div class="win98-content">
+                <section class="blog">
+                    <article class="blog__article">
+                        <h2 class="blog__article-title">Welcome to the Site</h2>
+                        <div class="blog__article-date">June 2025</div>
+                        <p>
+                            <i>Yo!</i> This is my random ideas website if you want <strong>serious enquiries</strong> click the portfolio icon on the desktop.
+                        </p>
+                    </article>
+                    <article class="blog__article">
+                        <h2 class="blog__article-title">I started learning assembly</h2>
+                        <div class="blog__article-date">July 2016</div>
+                        <p>
+                            Brainf*ck is no longer my friend. So I started to learn assembly.      
+                        </p>
+                        <img class="brainfuck" src="9wq3rt.jpg">
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            if (h < 10) h = '0' + h;
+            if (m < 10) m = '0' + m;
+            document.getElementById('taskbarClock').textContent = h + ':' + m;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Start button opens Win98 window
+        const startBtn = document.getElementById('startBtn');
+        const win98Window = document.getElementById('win98Window');
+        const win98CloseBtn = document.getElementById('win98CloseBtn');
+        if (startBtn && win98Window && win98CloseBtn) {
+            startBtn.addEventListener('click', () => {
+                win98Window.classList.add('active');
+                win98Window.focus();
+            });
+            win98CloseBtn.addEventListener('click', () => {
+                win98Window.classList.remove('active');
+            });
+            // Dismiss window with Escape
+            win98Window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    win98Window.classList.remove('active');
+                }
+            });
+        }
+
+        // Blog icon opens Win98 Blog window
+        const blogIcon = document.getElementById('blogIcon');
+        const win98BlogWindow = document.getElementById('win98BlogWindow');
+        const win98BlogCloseBtn = document.getElementById('win98BlogCloseBtn');
+        if (blogIcon && win98BlogWindow && win98BlogCloseBtn) {
+            blogIcon.addEventListener('click', () => {
+                win98BlogWindow.classList.add('active');
+                win98BlogWindow.focus();
+            });
+            win98BlogCloseBtn.addEventListener('click', () => {
+                win98BlogWindow.classList.remove('active');
+            });
+            // Dismiss window with Escape
+            win98BlogWindow.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    win98BlogWindow.classList.remove('active');
+                }
+            });
+        }
+        (function() {
+        const blogWindow = document.getElementById('win98BlogWindow');
+        const titlebar = document.getElementById('win98BlogTitlebar');
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        
+    })();
+    </script>
 </body>
 </html>

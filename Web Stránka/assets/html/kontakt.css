@@ -1,61 +1,137 @@
-/* General Styles */
-body {
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+    /* Background color */
+    --background-color: #EDF2F4;
+    /* Colors of items as per Material 3 Designs specifications */
+    --icon-color: #1E1E1E;
+    --surface-color: #1D1B20;
+    --outline-variant-color: #CAC4D0;
+    /* Pallete colors some from Material 3*/
+    --pastel-red: #FA5252;
+    --pastel-grey: #EDF2F4;
+    --pastel-dark-grey: #8D99AE;
+    --pastel-dark-blue: #2B2D42;
+    --black: #000000;
+    --pastel-lighter-red: #EF233C;
+    --pastel-lighter-grey: #C5C5C5;
+    --pastel-darker-red: #D90429;
+    --white: #FFFFFF;
+}
+
+.contact {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .tile-container {
-    display: grid;
-    grid-template-columns: repeat(2, 150px);
-    gap: 20px;
-  }
-  
-  .tile {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    perspective: 1000px;
-  }
-  
-  .tile-front,
-  .tile-back {
-    position: absolute;
+    justify-content: flex-start;
     width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+    max-width: 480px;
+    margin: 3rem auto 2rem auto;
+    padding: 2.5rem 2rem 2rem 2rem;
+    background-color: var(--pastel-grey);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.12);
+    min-height: 70vh;
+}
+
+.contact__title {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--pastel-dark-blue);
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Reset default form styles for consistency */
+.contact__form,
+.contact__form-group {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact__form-group {
+    margin-bottom: 1.25rem;
+}
+
+.contact__label {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--pastel-dark-blue);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.contact__input,
+.contact__textarea {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--outline-variant-color);
+    border-radius: 0.75rem;
+    background-color: var(--white);
+    color: var(--surface-color);
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+    resize: none;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+    border: 1.5px solid var(--pastel-lighter-red);
+    box-shadow: 0 0 0 2px var(--pastel-lighter-red, #EF233C22);
+}
+
+.contact__textarea {
+    min-height: 100px;
+    max-height: 220px;
+}
+
+.contact__button {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
-    color: white;
-    border-radius: 10px;
-  }
-  
-  .tile-front {
-    background-color: #0078d7;
-  }
-  
-  .tile-back {
-    background-color: #e81123;
-    transform: rotateY(180deg);
-  }
-  
-  /* Animation */
-  .tile {
-    animation: flip 4s infinite;
-  }
-  
-  @keyframes flip {
-    0%, 50% {
-      transform: rotateY(0);
+    font-weight: 600;
+    color: var(--white);
+    background: linear-gradient(90deg, var(--pastel-lighter-red), var(--pastel-darker-red));
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.85rem 0;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.08);
+    transition: background 0.2s, transform 0.1s;
+    width: 100%;
+    margin-top: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.contact__button:hover,
+.contact__button:focus {
+    background: linear-gradient(90deg, var(--pastel-darker-red), var(--pastel-lighter-red));
+    transform: translateY(-2px) scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .contact {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem;
+        margin: 1.5rem auto;
     }
-    100% {
-      transform: rotateY(180deg);
+    .contact__title {
+        font-size: 2rem;
+    }
+    .contact__button {
+        font-size: 1rem;
     }
 }
-  
+
+/* Optional: Add a subtle border to the form for separation */
+.contact__form {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 2px 12px 0 rgba(44, 62, 80, 0.06);
+    border: 1px solid var(--outline-variant-color);
+}
